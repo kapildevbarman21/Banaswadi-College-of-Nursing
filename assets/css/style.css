@@ -1697,7 +1697,7 @@ button, input, select, textarea {
   color: rgba(255, 255, 255, 0.75);
   padding-top: 4.5rem;
   font-size: 0.9rem;
-  border-top: 4px solid var(--med-green);
+  border-top: 4px solid #e5b73b;
 }
 
 .footer-top-grid {
