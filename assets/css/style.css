@@ -591,11 +591,15 @@ button, input, select, textarea {
 }
 
 .hero-description {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  max-width: 700px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.55;
+  margin-bottom: 2.25rem;
+  max-width: 760px;
+  letter-spacing: 0.25px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
 }
 
 .hero-btn-group {
@@ -2280,8 +2284,8 @@ html, body {
   }
 
   .hero-description {
-    font-size: 0.875rem !important;
-    line-height: 1.5 !important;
+    font-size: 1.15rem !important;
+    line-height: 1.45 !important;
     margin-bottom: 1.5rem !important;
   }
 
