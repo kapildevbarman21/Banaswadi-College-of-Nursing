@@ -505,8 +505,10 @@ button, input, select, textarea {
 
 .hero-carousel-container {
   position: relative;
-  height: clamp(480px, 52vh, 600px);
   width: 100%;
+  height: calc(100vh - 100px);
+  height: calc(100dvh - 100px);
+  min-height: 520px;
   overflow: hidden;
   background: #071a36;
 }
@@ -2426,9 +2428,10 @@ html, body {
 
   /* 3. Hero Section on Mobile */
   .hero-carousel-container {
-    height: clamp(260px, 68vw, 340px) !important;
-    min-height: 260px !important;
-    max-height: 360px !important;
+    height: calc(100vh - 88px) !important;
+    height: calc(100dvh - 88px) !important;
+    min-height: 480px !important;
+    max-height: none !important;
     width: 100% !important;
     position: relative !important;
     overflow: hidden !important;
