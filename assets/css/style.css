@@ -1,0 +1,2008 @@
+/* ==========================================================================
+   Banaswadi College of Nursing - Main Stylesheet
+   Inspired by Kristu Jayanti University Design Language
+   Colors: Deep University Navy, Emerald Medical Green, Prestige Gold, Slate
+   ========================================================================== */
+
+:root {
+  --primary-navy: #0a2240;
+  --primary-navy-dark: #06152b;
+  --primary-navy-light: #12345e;
+  --accent-blue: #004976;
+  --accent-royal: #002c8f;
+  
+  --med-green: #01923f;
+  --med-green-dark: #007532;
+  --med-green-light: #e8f7ee;
+  --med-green-glow: rgba(1, 146, 63, 0.25);
+  
+  --accent-gold: #d97706;
+  --accent-gold-light: #fef3c7;
+  --accent-amber: #f59e0b;
+  
+  --text-dark: #0f172a;
+  --text-muted: #475569;
+  --text-light: #64748b;
+  --text-white: #ffffff;
+  
+  --bg-white: #ffffff;
+  --bg-slate: #f8fafc;
+  --bg-slate-soft: #f1f5f9;
+  --bg-dark: #0a192f;
+  
+  --border-light: #e2e8f0;
+  --border-subtle: #cbd5e1;
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 35px -5px rgba(10,34,64,0.18), 0 10px 10px -5px rgba(10,34,64,0.04);
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base & Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--primary-navy);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ==========================================================================
+   TOP TICKER & UTILITY BAR (Kristu Jayanti Style: #01143F)
+   ========================================================================== */
+
+.top-utility-bar {
+  background: #01143F;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 50;
+  letter-spacing: 0.3px;
+}
+
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  gap: 1.5rem;
+}
+
+.top-announcement {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.badge-pulse {
+  background: var(--med-green);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  animation: pulse-green 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(1, 146, 63, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(1, 146, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(1, 146, 63, 0); }
+}
+
+.ticker-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  display: inline-block;
+  font-size: 0.78rem;
+}
+
+.ticker-text a {
+  color: #fcd34d;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-left: 0.35rem;
+}
+
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.top-links a {
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.top-links a:hover {
+  color: #ffffff;
+}
+
+.top-phone-cta {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.22rem 0.75rem;
+  border-radius: var(--radius-full);
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   MAIN NAVIGATION HEADER (Kristu Jayanti Signature: #002C62)
+   ========================================================================== */
+
+.main-header {
+  background: #002C62;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 20, 63, 0.25);
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(8px);
+}
+
+.main-header.scrolled {
+  background: rgba(0, 44, 98, 0.96);
+  box-shadow: 0 10px 30px rgba(0, 20, 63, 0.35);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 1.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+/* Brand Identity Lockup */
+.brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brand-emblem-img {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #f59e0b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+}
+
+.brand-title {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-title span {
+  color: #4ade80;
+}
+
+.brand-accreditation {
+  font-size: 0.63rem;
+  color: #93c5fd;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Navigation Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-link i.fa-chevron-down {
+  font-size: 0.65rem;
+  transition: transform var(--transition-fast);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-link:hover, .nav-item.active .nav-link {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-item:hover .nav-link i.fa-chevron-down {
+  transform: rotate(180deg);
+  color: #ffffff;
+}
+
+/* Dropdown Menu (Kristu Jayanti Style Mega Dropdown) */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 270px;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 15px 35px rgba(0, 20, 63, 0.25);
+  border: 1px solid var(--border-light);
+  padding: 0.65rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary-navy);
+  transition: all var(--transition-fast);
+}
+
+.dropdown-link i {
+  font-size: 0.85rem;
+  color: var(--med-green);
+  width: 18px;
+  text-align: center;
+}
+
+.dropdown-link:hover {
+  background: var(--bg-slate);
+  color: var(--med-green-dark);
+  padding-left: 1.5rem;
+}
+
+.dropdown-link:hover i {
+  color: var(--med-green-dark);
+}
+
+/* Header CTAs */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.btn-search-trigger {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-search-trigger:hover {
+  background: #ffffff;
+  color: #002C62;
+}
+
+.btn-primary-apply {
+  background: #ffffff;
+  color: #002C62;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary-apply:hover {
+  background: var(--med-green);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 146, 63, 0.4);
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+/* ==========================================================================
+   HERO CAROUSEL & STATS OVERLAY (Signature University Showcase)
+   ========================================================================== */
+
+.hero-slider-section {
+  position: relative;
+  background: var(--primary-navy-dark);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero-carousel-container {
+  position: relative;
+  height: 640px;
+  width: 100%;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  transform: scale(1.03);
+  display: flex;
+  align-items: center;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.slide-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(6, 21, 43, 0.94) 0%, rgba(10, 34, 64, 0.82) 55%, rgba(6, 21, 43, 0.4) 100%);
+  z-index: 2;
+}
+
+.slide-content-wrap {
+  position: relative;
+  z-index: 3;
+  max-width: 820px;
+  padding: 4rem 1.5rem;
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(1, 146, 63, 0.25);
+  border: 1px solid rgba(1, 146, 63, 0.6);
+  color: #86efac;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(8px);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.hero-title {
+  font-size: 3.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-title span.highlight-green {
+  color: #4ade80;
+}
+
+.hero-title span.highlight-gold {
+  color: #fcd34d;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.hero-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  background: var(--med-green);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 6px 20px rgba(1, 146, 63, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-primary:hover {
+  background: var(--med-green-dark);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.btn-hero-outline {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.85rem 1.65rem;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-outline:hover {
+  background: #ffffff;
+  color: var(--primary-navy);
+  border-color: #ffffff;
+}
+
+/* Slider Controls */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all var(--transition-fast);
+}
+
+.carousel-nav-btn:hover {
+  background: var(--med-green);
+  border-color: var(--med-green);
+  color: #ffffff;
+}
+
+.carousel-prev { left: 1.5rem; }
+.carousel-next { right: 1.5rem; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 6.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dot.active {
+  width: 32px;
+  background: var(--med-green);
+}
+
+/* Floating Quick Action Cards (Kristu Jayanti Signature Feature) */
+.hero-quick-actions-bar {
+  position: relative;
+  margin-top: -4.5rem;
+  z-index: 20;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.quick-action-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.quick-action-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px rgba(10, 34, 64, 0.16);
+  border-color: var(--med-green);
+}
+
+.action-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--med-green-light);
+  color: var(--med-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.quick-action-card:hover .action-icon-circle {
+  background: var(--med-green);
+  color: #ffffff;
+}
+
+.action-meta h4 {
+  font-size: 1.05rem;
+  color: var(--primary-navy);
+  margin-bottom: 0.25rem;
+}
+
+.action-meta p {
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   ACCREDITATION & STATS BAR
+   ========================================================================== */
+
+.accreditations-strip {
+  background: var(--bg-slate);
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.accreditations-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.accred-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.accred-label span.small {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.accred-label strong {
+  font-size: 1.15rem;
+  color: var(--primary-navy);
+}
+
+.accred-badges-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.accred-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #ffffff;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.accred-badge-item i {
+  color: var(--med-green);
+  font-size: 1.35rem;
+}
+
+.accred-badge-item .badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.accred-badge-item .badge-text strong {
+  font-size: 0.9rem;
+  color: var(--primary-navy);
+  line-height: 1.2;
+}
+
+.accred-badge-item .badge-text span {
+  font-size: 0.72rem;
+  color: var(--text-light);
+}
+
+/* Numeric Counters Strip */
+.stats-counter-section {
+  padding: 3.5rem 0;
+  background: linear-gradient(135deg, var(--primary-navy), var(--primary-navy-dark));
+  color: #ffffff;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: #4ade80;
+  margin-bottom: 0.75rem;
+}
+
+.stat-number {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+}
+
+.stat-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   PROGRAMS SHOWCASE (Filterable & High-Impact)
+   ========================================================================== */
+
+.section-padding {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--med-green-light);
+  color: var(--med-green);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 2.35rem;
+  color: var(--primary-navy);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.programs-filter-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--primary-navy);
+  color: #ffffff;
+  border-color: var(--primary-navy);
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.program-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--med-green);
+}
+
+.program-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(10, 34, 64, 0.85);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  z-index: 5;
+}
+
+.program-img-wrap {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+}
+
+.program-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.program-card:hover .program-img-wrap img {
+  transform: scale(1.08);
+}
+
+.program-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.program-title {
+  font-size: 1.35rem;
+  color: var(--primary-navy);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.program-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--bg-slate);
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meta-row span.label {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.meta-row span.val {
+  color: var(--primary-navy);
+  font-weight: 700;
+}
+
+.program-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.program-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-card-apply {
+  background: var(--med-green);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.6rem 1.15rem;
+  border-radius: var(--radius-md);
+  flex: 1;
+  text-align: center;
+  transition: background var(--transition-fast);
+}
+
+.btn-card-apply:hover {
+  background: var(--med-green-dark);
+  color: #ffffff;
+}
+
+.btn-card-details {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--primary-navy);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-card-details:hover {
+  background: var(--bg-slate-soft);
+  color: var(--med-green);
+}
+
+/* ==========================================================================
+   WHY CHOOSE BANASWADI (Kristu Jayanti Style Feature Cards)
+   ========================================================================== */
+
+.why-choose-section {
+  background: var(--bg-slate);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.feature-box {
+  background: #ffffff;
+  padding: 2.25rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--med-green);
+  transition: height var(--transition-normal);
+}
+
+.feature-box:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-box:hover::before {
+  height: 100%;
+}
+
+.feature-icon-wrapper {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  background: var(--med-green-light);
+  color: var(--med-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.feature-box:hover .feature-icon-wrapper {
+  background: var(--med-green);
+  color: #ffffff;
+}
+
+.feature-box h3 {
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+  margin-bottom: 0.75rem;
+}
+
+.feature-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   CLINICAL TRAINING & HOSPITALS SHOWCASE
+   ========================================================================== */
+
+.hospitals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.hospital-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+}
+
+.hospital-card:hover {
+  border-color: var(--med-green);
+  box-shadow: var(--shadow-xl);
+}
+
+.hospital-badge {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  align-self: flex-start;
+}
+
+.hospital-title {
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+  margin-bottom: 0.5rem;
+}
+
+.hospital-specs {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.hospital-specs span i {
+  color: var(--med-green);
+  margin-right: 0.35rem;
+}
+
+.hospital-rotations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.rot-tag {
+  background: var(--bg-slate);
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   "WHAT'S HAPPENING" (Kristu Jayanti 3-Column Notice Board)
+   ========================================================================== */
+
+.whats-happening-section {
+  background: var(--bg-slate);
+}
+
+.notice-board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.notice-col-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.notice-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.notice-col-header h3 {
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notice-col-header h3 i {
+  color: var(--med-green);
+}
+
+.notice-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.notice-single-item {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+.notice-single-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.notice-date-box {
+  background: var(--primary-navy);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.65rem;
+  text-align: center;
+  min-width: 52px;
+  height: fit-content;
+  flex-shrink: 0;
+}
+
+.notice-date-box span.day {
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.notice-date-box span.month {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.notice-info h4 {
+  font-size: 0.95rem;
+  color: var(--primary-navy);
+  line-height: 1.35;
+  margin-bottom: 0.35rem;
+}
+
+.notice-info h4 a:hover {
+  color: var(--med-green);
+}
+
+.notice-info p {
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+
+/* ==========================================================================
+   CAMPUS INFRASTRUCTURE & VIRTUAL TOUR GALLERY
+   ========================================================================== */
+
+.campus-gallery-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.gallery-tab-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-dark);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gallery-tab-btn.active, .gallery-tab-btn:hover {
+  background: var(--med-green);
+  color: #fff;
+  border-color: var(--med-green);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 260px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(6, 21, 43, 0.9) 0%, rgba(6, 21, 43, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  color: #fff;
+  opacity: 0.9;
+  transition: all var(--transition-fast);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+.gallery-item-overlay h4 {
+  color: #ffffff;
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.gallery-item-overlay p {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   LEADERSHIP DESK (Chairman & Principal's Message)
+   ========================================================================== */
+
+.leadership-section {
+  background: #ffffff;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.leader-card {
+  background: var(--bg-slate);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  border: 1px solid var(--border-light);
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+}
+
+.leader-photo-wrap {
+  width: 140px;
+  height: 170px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 4px solid #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.leader-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leader-content {
+  flex: 1;
+}
+
+.quote-icon {
+  color: var(--med-green);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.leader-quote {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.leader-name {
+  font-size: 1.15rem;
+  color: var(--primary-navy);
+  font-weight: 800;
+}
+
+.leader-role {
+  font-size: 0.8125rem;
+  color: var(--med-green);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.leader-sub {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* ==========================================================================
+   PLACEMENTS & GLOBAL CAREERS ("Campus to Careers")
+   ========================================================================== */
+
+.careers-section {
+  background: linear-gradient(180deg, var(--bg-slate) 0%, #ffffff 100%);
+}
+
+.recruiters-strip-title {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+}
+
+.recruiters-pills-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.recruiter-pill {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 0.65rem 1.35rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recruiter-pill i {
+  color: var(--med-green);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.star-rating {
+  color: var(--accent-amber);
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.testimonial-body {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-img {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--med-green);
+}
+
+.author-meta h5 {
+  font-size: 0.95rem;
+  color: var(--primary-navy);
+  margin-bottom: 0.15rem;
+}
+
+.author-meta p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.author-meta .placed-badge {
+  color: var(--med-green);
+  font-weight: 700;
+  font-size: 0.72rem;
+  display: block;
+}
+
+/* ==========================================================================
+   ADMISSIONS 2025-26 CALLOUT & CTA BANNER
+   ========================================================================== */
+
+.admissions-banner-section {
+  background: linear-gradient(135deg, var(--primary-navy) 0%, #001f3f 50%, var(--med-green-dark) 100%);
+  color: #ffffff;
+  padding: 4.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.admissions-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.admissions-banner-text {
+  max-width: 650px;
+}
+
+.admissions-banner-text h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.admissions-banner-text p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.admissions-banner-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-banner-apply {
+  background: #ffffff;
+  color: var(--primary-navy);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-banner-apply:hover {
+  background: var(--med-green);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-banner-call {
+  background: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.9rem 1.75rem;
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-banner-call:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   MEGA FOOTER (Kristu Jayanti Signature 5-Column Design)
+   ========================================================================== */
+
+.site-footer {
+  background: var(--primary-navy-dark);
+  color: rgba(255, 255, 255, 0.75);
+  padding-top: 4.5rem;
+  font-size: 0.9rem;
+  border-top: 4px solid var(--med-green);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr 1.2fr 1.5fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand-col p {
+  margin-top: 1.25rem;
+  line-height: 1.6;
+  font-size: 0.85rem;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.social-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.social-icon-btn:hover {
+  background: var(--med-green);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--med-green);
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links-list a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-links-list a:hover {
+  color: #4ade80;
+  padding-left: 0.35rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.footer-contact-item i {
+  color: var(--med-green);
+  margin-top: 0.2rem;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 0;
+  background: #040e1e;
+  font-size: 0.8rem;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal-links a {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-legal-links a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   FLOATING ACTION BUTTONS & UTILITIES
+   ========================================================================== */
+
+/* Floating Apply Badge */
+.floating-apply-badge {
+  position: fixed;
+  right: -32px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  background: var(--med-green);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  z-index: 990;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+}
+
+@media (max-width: 1350px) {
+  .floating-apply-badge {
+    display: none;
+  }
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.65rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  z-index: 990;
+  transition: all var(--transition-fast);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 5.2rem;
+  right: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--primary-navy);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-md);
+  z-index: 990;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top-btn:hover {
+  background: var(--med-green);
+}
+
+/* ==========================================================================
+   MODAL WINDOWS (Application, Search, Quick Call)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 21, 43, 0.75);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  max-width: 650px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  padding: 2.5rem;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform var(--transition-normal);
+}
+
+.modal-backdrop.open .modal-content-card {
+  transform: translateY(0);
+}
+
+.btn-close-modal {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: var(--bg-slate);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-close-modal:hover {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: var(--bg-slate);
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  transition: border-color var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--med-green);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px var(--med-green-glow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .quick-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .programs-grid, .features-grid, .hospitals-grid, .notice-board-grid, .gallery-grid, .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .top-links {
+    display: none;
+  }
+  .hero-carousel-container {
+    height: 520px;
+  }
+  .hero-title {
+    font-size: 2.15rem;
+  }
+  .hero-quick-actions-bar {
+    margin-top: 1.5rem;
+  }
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .programs-grid, .features-grid, .hospitals-grid, .notice-board-grid, .gallery-grid, .testimonials-grid, .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .admissions-banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
