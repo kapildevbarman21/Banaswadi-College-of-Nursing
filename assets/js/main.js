@@ -358,7 +358,7 @@ function initSearch() {
     { title: 'Post Basic B.Sc. Nursing (P.B.B.Sc)', url: 'programs.html#pbbsc-nursing', cat: 'Academics' },
     { title: 'M.Sc. Nursing (5 Specialties)', url: 'programs.html#msc-nursing', cat: 'Academics' },
     { title: 'GNM (General Nursing & Midwifery)', url: 'programs.html#gnm', cat: 'Diploma' },
-    { title: 'Admissions 2025-26 & Eligibility', url: 'admissions.html', cat: 'Admissions' },
+    { title: 'Admissions 2027-28 & Eligibility', url: 'admissions.html', cat: 'Admissions' },
     { title: 'Clinical Training & Associated Hospitals', url: 'clinical-training.html', cat: 'Clinical' },
     { title: 'Simulation Labs & Infrastructure', url: 'campus-life.html#labs', cat: 'Campus Life' },
     { title: 'Hostels & Campus Accommodation', url: 'campus-life.html#hostels', cat: 'Facilities' },

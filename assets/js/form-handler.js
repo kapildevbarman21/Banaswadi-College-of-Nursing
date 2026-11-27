@@ -106,7 +106,7 @@ function initNewsletterForm() {
 
 function showAdmissionSuccessModal(applicantName, courseName) {
   let modal = document.getElementById('applicationSuccessModal');
-  const appNo = 'BCN-2025-' + Math.floor(100000 + Math.random() * 900000);
+  const appNo = 'BCN-2027-' + Math.floor(100000 + Math.random() * 900000);
 
   if (!modal) {
     modal = document.createElement('div');
@@ -122,7 +122,7 @@ function showAdmissionSuccessModal(applicantName, courseName) {
       </div>
       <h3 style="font-size:1.6rem; color:var(--primary-navy); margin-bottom:0.5rem;">Application Registered!</h3>
       <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1.5rem;">
-        Congratulations <strong>${applicantName}</strong>! Your application for <strong>${courseName}</strong> has been successfully initiated for the academic year 2025-2026.
+        Congratulations <strong>${applicantName}</strong>! Your application for <strong>${courseName}</strong> has been successfully initiated for the academic year 2027-2028.
       </p>
       <div style="background:var(--bg-slate); border:1px dashed var(--border-light); padding:1rem; border-radius:var(--radius-md); margin-bottom:1.5rem; text-align:left;">
         <div style="display:flex; justify-content:space-between; margin-bottom:0.35rem; font-size:0.85rem;">
