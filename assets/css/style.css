@@ -131,17 +131,18 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.4rem 0;
-  gap: 1.5rem;
+  padding: 0.35rem 0;
+  gap: 1rem;
+  width: 100%;
 }
 
 .top-announcement {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   overflow: hidden;
   white-space: nowrap;
-  flex: 1;
+  flex-shrink: 1;
 }
 
 .badge-pulse {
@@ -149,10 +150,10 @@ button, input, select, textarea {
   color: #fff;
   font-size: 0.65rem;
   font-weight: 800;
-  padding: 0.2rem 0.6rem;
+  padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -169,26 +170,30 @@ button, input, select, textarea {
 .ticker-text {
   color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
-  display: inline-block;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
 }
 
 .ticker-text a {
   color: #fcd34d;
   font-weight: 700;
   text-decoration: underline;
-  margin-left: 0.35rem;
+  margin-left: 0.25rem;
+  white-space: nowrap;
 }
 
 .top-links {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.15rem;
   flex-shrink: 0;
   text-transform: uppercase;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
 }
 
 .top-links a {
@@ -205,7 +210,7 @@ button, input, select, textarea {
 
 .top-phone-cta {
   background: rgba(255, 255, 255, 0.12);
-  padding: 0.22rem 0.75rem;
+  padding: 0.2rem 0.65rem;
   border-radius: var(--radius-full);
   color: #ffffff !important;
   font-weight: 700 !important;
@@ -213,7 +218,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   MAIN NAVIGATION HEADER (Kristu Jayanti Signature: #002C62)
+   MAIN NAVIGATION HEADER (Kristu Jayanti Signature: #002C62 with Emerald Line)
    ========================================================================== */
 
 .main-header {
@@ -221,38 +226,39 @@ button, input, select, textarea {
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 20px rgba(0, 20, 63, 0.25);
+  border-bottom: 2px solid var(--med-green);
+  box-shadow: 0 4px 20px rgba(0, 20, 63, 0.28);
   transition: all var(--transition-normal);
   backdrop-filter: blur(8px);
 }
 
 .main-header.scrolled {
-  background: rgba(0, 44, 98, 0.96);
-  box-shadow: 0 10px 30px rgba(0, 20, 63, 0.35);
+  background: rgba(0, 44, 98, 0.98);
+  box-shadow: 0 10px 30px rgba(0, 20, 63, 0.4);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.65rem 1.5rem;
+  padding: 0.5rem 1rem;
   max-width: 1440px;
   margin: 0 auto;
-  gap: 1.5rem;
+  gap: 0.5rem;
+  width: 100%;
 }
 
 /* Brand Identity Lockup */
 .brand-identity {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.55rem;
   text-decoration: none;
   flex-shrink: 0;
 }
 
 .brand-emblem-img {
-  height: 54px;
+  height: 44px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
@@ -264,20 +270,20 @@ button, input, select, textarea {
 }
 
 .brand-tag {
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   font-weight: 700;
   color: #f59e0b;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
-  line-height: 1.2;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
 }
 
 .brand-title {
-  font-size: 1.22rem;
+  font-size: 1.02rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.2px;
-  line-height: 1.2;
+  line-height: 1.15;
   text-transform: uppercase;
   white-space: nowrap;
 }
@@ -287,11 +293,11 @@ button, input, select, textarea {
 }
 
 .brand-accreditation {
-  font-size: 0.63rem;
+  font-size: 0.56rem;
   color: #93c5fd;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  line-height: 1.2;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
   white-space: nowrap;
 }
 
@@ -299,7 +305,8 @@ button, input, select, textarea {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: 0.05rem;
+  flex-shrink: 1;
 }
 
 .nav-item {
@@ -309,9 +316,9 @@ button, input, select, textarea {
 .nav-link {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.55rem 0.75rem;
-  font-size: 0.85rem;
+  gap: 0.2rem;
+  padding: 0.42rem 0.45rem;
+  font-size: 0.79rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.95);
   border-radius: var(--radius-sm);
@@ -320,7 +327,7 @@ button, input, select, textarea {
 }
 
 .nav-link i.fa-chevron-down {
-  font-size: 0.65rem;
+  font-size: 0.58rem;
   transition: transform var(--transition-fast);
   color: rgba(255, 255, 255, 0.6);
 }
@@ -340,15 +347,15 @@ button, input, select, textarea {
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 270px;
+  min-width: 260px;
   background: #ffffff;
   border-radius: var(--radius-md);
   box-shadow: 0 15px 35px rgba(0, 20, 63, 0.25);
   border: 1px solid var(--border-light);
-  padding: 0.65rem 0;
+  padding: 0.55rem 0;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
+  transform: translateY(8px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 100;
 }
@@ -363,15 +370,15 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.6rem 1.25rem;
-  font-size: 0.85rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.84rem;
   font-weight: 500;
   color: var(--primary-navy);
   transition: all var(--transition-fast);
 }
 
 .dropdown-link i {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--med-green);
   width: 18px;
   text-align: center;
@@ -380,7 +387,7 @@ button, input, select, textarea {
 .dropdown-link:hover {
   background: var(--bg-slate);
   color: var(--med-green-dark);
-  padding-left: 1.5rem;
+  padding-left: 1.4rem;
 }
 
 .dropdown-link:hover i {
@@ -391,13 +398,13 @@ button, input, select, textarea {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
 .btn-search-trigger {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   border-radius: var(--radius-full);
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
@@ -407,6 +414,7 @@ button, input, select, textarea {
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-fast);
+  font-size: 0.8rem;
 }
 
 .btn-search-trigger:hover {
@@ -417,14 +425,14 @@ button, input, select, textarea {
 .btn-primary-apply {
   background: #ffffff;
   color: #002C62;
-  font-size: 0.8125rem;
+  font-size: 0.79rem;
   font-weight: 800;
-  padding: 0.55rem 1.35rem;
+  padding: 0.44rem 1rem;
   border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  gap: 0.4rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   transition: all var(--transition-fast);
   border: none;
   cursor: pointer;
@@ -446,6 +454,36 @@ button, input, select, textarea {
   color: #ffffff;
   cursor: pointer;
   padding: 0.4rem;
+}
+
+@media (max-width: 1280px) {
+  .header-container {
+    padding: 0.5rem 0.75rem;
+    gap: 0.35rem;
+  }
+  .brand-title {
+    font-size: 0.95rem;
+  }
+  .brand-emblem-img {
+    height: 40px;
+  }
+  .nav-link {
+    padding: 0.4rem 0.38rem;
+    font-size: 0.76rem;
+  }
+  .btn-primary-apply {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .nav-menu {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
 }
 
 /* ==========================================================================
@@ -1958,7 +1996,7 @@ button, input, select, textarea {
    RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 
-@media (max-width: 1180px) {
+@media (max-width: 1080px) {
   .nav-menu {
     display: none;
   }
