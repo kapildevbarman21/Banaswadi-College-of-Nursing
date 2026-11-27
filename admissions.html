@@ -409,8 +409,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/form-handler.js"></script>
 <!-- ==========================================================================
        MOBILE DRAWER NAVIGATION
        ========================================================================== -->
@@ -429,11 +427,11 @@
     </div>
 
     <div class="mobile-drawer-nav">
-      <a href="index.html" class="mobile-nav-link active">Home <i class="fa-solid fa-angle-right"></i></a>
+      <a href="index.html" class="mobile-nav-link">Home <i class="fa-solid fa-angle-right"></i></a>
       <a href="about.html" class="mobile-nav-link">About College <i class="fa-solid fa-angle-right"></i></a>
       <a href="programs.html" class="mobile-nav-link">Nursing Programs <i class="fa-solid fa-angle-right"></i></a>
       <a href="clinical-training.html" class="mobile-nav-link">Clinical Training &amp; Hospitals <i class="fa-solid fa-angle-right"></i></a>
-      <a href="admissions.html" class="mobile-nav-link">Admissions 2025-26 <i class="fa-solid fa-angle-right"></i></a>
+      <a href="admissions.html" class="mobile-nav-link active">Admissions 2025-26 <i class="fa-solid fa-angle-right"></i></a>
       <a href="campus-life.html" class="mobile-nav-link">Campus Life &amp; Hostels <i class="fa-solid fa-angle-right"></i></a>
       <a href="placements.html" class="mobile-nav-link">Placements &amp; Careers <i class="fa-solid fa-angle-right"></i></a>
       <a href="contact.html" class="mobile-nav-link">Contact &amp; Location <i class="fa-solid fa-angle-right"></i></a>
@@ -450,6 +448,128 @@
   </aside>
 
   <!-- ==========================================================================
-       MODAL: ADMISSIONS
+       MODAL: ADMISSIONS APPLICATION FORM (Interactive with Validation)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="admissionModal">
+    <div class="modal-content-card">
+      <button class="btn-close-modal" onclick="closeModal('admissionModal')"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <span class="badge-pulse"><i class="fa-solid fa-user-graduate"></i> Academic Year 2025-2026</span>
+        <h3 style="font-size:1.6rem; color:var(--primary-navy); margin-top:0.5rem;">Online Admission Registration</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Fill in your details below to initiate your admission into Banaswadi College of Nursing.</p>
+      </div>
+
+      <form id="admissionsApplyForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name of Applicant *</label>
+            <input type="text" name="full_name" class="form-control" placeholder="e.g. Rachel Thomas" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" name="email" class="form-control" placeholder="rachel@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Contact Mobile Number *</label>
+            <input type="tel" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Select Nursing Program *</label>
+            <select name="course" class="form-control" required>
+              <option value="">-- Choose Program --</option>
+              <option value="B.Sc. Nursing (Basic 4 Years)">B.Sc. Nursing (4 Years)</option>
+              <option value="Post Basic B.Sc. Nursing (2 Years)">Post Basic B.Sc. Nursing (2 Years)</option>
+              <option value="M.Sc. Nursing (Medical Surgical)">M.Sc. Nursing (Medical-Surgical)</option>
+              <option value="M.Sc. Nursing (OBG / Paediatrics)">M.Sc. Nursing (OBG / Paediatrics)</option>
+              <option value="General Nursing & Midwifery (GNM)">GNM Diploma (3 Years)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Highest Qualification Completed</label>
+            <select name="qualification" class="form-control">
+              <option value="10+2 / PUC (Science - PCB)">10+2 / PUC (Science - PCB)</option>
+              <option value="GNM Diploma">GNM Diploma</option>
+              <option value="B.Sc. Nursing">B.Sc. Nursing</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">State / City of Residence</label>
+            <input type="text" name="city" class="form-control" placeholder="e.g. Bangalore, Karnataka">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Hostel Accommodation Required?</label>
+          <div style="display:flex; gap:1.5rem; font-size:0.875rem;">
+            <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer;">
+              <input type="radio" name="hostel" value="Yes" checked> Yes, separate hostel required
+            </label>
+            <label style="display:flex; align-items:center; gap:0.4rem; cursor:pointer;">
+              <input type="radio" name="hostel" value="No"> No, day scholar
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary-apply" style="width:100%; justify-content:center; padding:0.85rem; font-size:1rem; margin-top:0.5rem;">
+          <i class="fa-solid fa-lock"></i> Submit &amp; Generate Application Reference
+        </button>
+        <p style="text-align:center; font-size:0.75rem; color:var(--text-light); margin-top:0.75rem;">
+          Your details are protected under our privacy charter and forwarded directly to the RGUHS admissions desk.
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: REQUEST A CALL BACK
+       ========================================================================== -->
+  <div class="modal-backdrop" id="callbackModal">
+    <div class="modal-content-card" style="max-width:480px;">
+      <button class="btn-close-modal" onclick="closeModal('callbackModal')"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <div style="width:56px; height:56px; background:#f3e8ff; color:#9333ea; border-radius:var(--radius-full); display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 0.75rem auto;">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <h3 style="font-size:1.4rem; color:var(--primary-navy);">Request a Call Back</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Have questions about eligibility, fee structures or hospital clinical postings? We will call you back.</p>
+      </div>
+
+      <form id="callbackRequestForm">
+        <div class="form-group">
+          <label class="form-label">Your Name *</label>
+          <input type="text" name="cb_name" class="form-control" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Phone Number *</label>
+          <input type="tel" name="cb_phone" class="form-control" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Program of Interest</label>
+          <select name="cb_program" class="form-control">
+            <option value="B.Sc. Nursing">B.Sc. Nursing (Basic 4 Years)</option>
+            <option value="P.B.B.Sc. Nursing">Post Basic B.Sc. Nursing</option>
+            <option value="M.Sc. Nursing">M.Sc. Nursing</option>
+            <option value="GNM">GNM Diploma</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary-apply" style="width:100%; justify-content:center;">
+          Request Call Back
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/form-handler.js"></script>
 </body>
 </html>
