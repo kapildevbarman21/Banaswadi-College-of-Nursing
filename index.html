@@ -162,29 +162,112 @@
     <div class="hero-carousel-container">
       <!-- Slide 1: Nursing Leadership -->
       <div class="hero-slide active">
-        <img src="assets/images/hero-1.jpg" alt="Nursing Excellence" class="slide-bg-img">
+        <picture>
+          <source srcset="assets/images/hero-1.webp" type="image/webp">
+          <img src="assets/images/hero-1.jpg" alt="Excellence in Nursing Education" class="slide-bg-img">
+        </picture>
         <div class="slide-overlay"></div>
-        <div class="container">
+        <div class="container hero-container-grid">
           <div class="slide-content-wrap">
             <div class="hero-pill-badge">
-              <i class="fa-solid fa-certificate"></i> Approved by INC New Delhi &bull; Affiliated to RGUHS
+              <span class="live-dot-pulse"></span>
+              <span class="badge-accent">ADMISSIONS 2025-26 OPEN</span>
+              <span class="badge-divider"></span>
+              <span><i class="fa-solid fa-shield-halved"></i> INC &amp; KSNC Approved &bull; RGUHS Affiliated</span>
             </div>
             <h1 class="hero-title">
-              Excellence in <span class="highlight-green">Nursing Education</span> &amp; Global Healthcare Leadership
+              Excellence in <span class="highlight-gold">Nursing Education</span><br>
+              <span class="hero-title-sub">&amp; Global Healthcare Leadership</span>
             </h1>
             <p class="hero-description">
-              Empowering compassionate, scientifically-grounded nursing professionals through rigorous bedside clinical immersion in 1000+ bed teaching hospitals and world-class simulation labs.
+              Empowering compassionate, scientifically-grounded nursing professionals through rigorous bedside clinical immersion in <strong>1,000+ bed teaching hospitals</strong> and world-class simulation labs.
             </p>
             <div class="hero-btn-group">
               <button class="btn-hero-primary" data-open-modal="admissionModal">
-                <i class="fa-solid fa-graduation-cap"></i> Apply for 2025-26 Admissions
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Apply for 2025-26</span>
+                <i class="fa-solid fa-arrow-right-long btn-arrow-icon"></i>
               </button>
-              <a href="programs.html" class="btn-hero-outline">
-                <i class="fa-solid fa-list-check"></i> Explore Programs
+              <a href="programs.html" class="btn-hero-glass">
+                <i class="fa-solid fa-book-medical"></i>
+                <span>Explore Programs &amp; Fees</span>
               </a>
-              <button class="btn-hero-outline" data-open-modal="callbackModal">
-                <i class="fa-solid fa-phone"></i> Request Callback
+              <button class="btn-hero-outline-gold" data-open-modal="callbackModal">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Request Callback</span>
               </button>
+            </div>
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">1,000+</div>
+                <div class="hero-stat-label">Hospital Beds Tie-Up</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-label">Bedside Immersion</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">98%</div>
+                <div class="hero-stat-label">Global Placement Rate</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">20+ Yrs</div>
+                <div class="hero-stat-label">Academic Legacy</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Hero Spotlight Card 1 -->
+          <div class="hero-spotlight-card">
+            <div class="spotlight-card-header">
+              <div class="spotlight-badge">
+                <span class="live-dot-pulse"></span> Admissions Active
+              </div>
+              <h4>Admissions 2025-26</h4>
+              <p>Approved by INC New Delhi, KSNC &amp; Affiliated to RGUHS</p>
+            </div>
+            <div class="spotlight-courses-list">
+              <a href="programs.html#b-sc-nursing" class="spotlight-course-item">
+                <div class="course-code">B.Sc</div>
+                <div class="course-details">
+                  <strong>B.Sc. Nursing</strong>
+                  <span>4 Years Degree &bull; 100 Seats</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="programs.html#gnm-nursing" class="spotlight-course-item">
+                <div class="course-code">GNM</div>
+                <div class="course-details">
+                  <strong>General Nursing &amp; Midwifery</strong>
+                  <span>3 Years Diploma &bull; 60 Seats</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="programs.html#p-b-b-sc-nursing" class="spotlight-course-item">
+                <div class="course-code">PB B.Sc</div>
+                <div class="course-details">
+                  <strong>Post Basic B.Sc. Nursing</strong>
+                  <span>2 Years Degree &bull; 40 Seats</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="programs.html#m-sc-nursing" class="spotlight-course-item">
+                <div class="course-code">M.Sc</div>
+                <div class="course-details">
+                  <strong>M.Sc. Nursing (Specialties)</strong>
+                  <span>2 Years Postgrad &bull; Clinical Mastery</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+            </div>
+            <button class="btn-spotlight-cta" data-open-modal="admissionModal">
+              <i class="fa-solid fa-paper-plane"></i> Apply Online for 2025-26
+            </button>
+            <div class="spotlight-helpline">
+              <i class="fa-solid fa-headset"></i> Admissions Helpline: <strong>+91 98450 12345</strong>
             </div>
           </div>
         </div>
@@ -192,26 +275,112 @@
 
       <!-- Slide 2: Modern Clinical Training -->
       <div class="hero-slide">
-        <img src="assets/images/hero-2.jpg" alt="Modern Simulation Labs" class="slide-bg-img">
+        <picture>
+          <source srcset="assets/images/hero-2.webp" type="image/webp">
+          <img src="assets/images/hero-2.jpg" alt="Modern Clinical Simulation Labs" class="slide-bg-img">
+        </picture>
         <div class="slide-overlay"></div>
-        <div class="container">
+        <div class="container hero-container-grid">
           <div class="slide-content-wrap">
             <div class="hero-pill-badge">
-              <i class="fa-solid fa-hospital"></i> 1000+ Super-Specialty Hospital Beds
+              <span class="live-dot-pulse"></span>
+              <span class="badge-accent">CLINICAL IMMERSION</span>
+              <span class="badge-divider"></span>
+              <span><i class="fa-solid fa-hospital"></i> 1,000+ Super-Specialty Hospital Beds</span>
             </div>
             <h2 class="hero-title">
-              State-of-the-Art <span class="highlight-gold">Simulation Labs</span> &amp; Hands-On Bedside Mastery
+              State-of-the-Art <span class="highlight-gold">Simulation Labs</span><br>
+              <span class="hero-title-sub">&amp; Hands-On Bedside Mastery</span>
             </h2>
             <p class="hero-description">
-              From advanced OSCE training and maternal-child health mannequins to intensive emergency care postings at premier Bengaluru medical centers.
+              From advanced <strong>OSCE clinical simulators</strong> and maternal-child mannequins to intensive emergency care postings at premier Bengaluru multi-specialty hospitals.
             </p>
             <div class="hero-btn-group">
               <a href="clinical-training.html" class="btn-hero-primary">
-                <i class="fa-solid fa-heart-pulse"></i> View Clinical Affiliations
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>View Clinical Affiliations</span>
+                <i class="fa-solid fa-arrow-right-long btn-arrow-icon"></i>
               </a>
-              <a href="campus-life.html#infrastructure" class="btn-hero-outline">
-                <i class="fa-solid fa-camera"></i> Virtual Campus Tour
+              <a href="campus-life.html#infrastructure" class="btn-hero-glass">
+                <i class="fa-solid fa-camera"></i>
+                <span>Virtual Campus Tour</span>
               </a>
+              <button class="btn-hero-outline-gold" data-open-modal="callbackModal">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Request Callback</span>
+              </button>
+            </div>
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">5+</div>
+                <div class="hero-stat-label">Multi-Specialty Tie-Ups</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-label">OSCE Lab Access</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">1:1</div>
+                <div class="hero-stat-label">Preceptor Guidance</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">24/7</div>
+                <div class="hero-stat-label">Clinical Rotations</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Hero Spotlight Card 2 -->
+          <div class="hero-spotlight-card">
+            <div class="spotlight-card-header">
+              <div class="spotlight-badge">
+                <span class="live-dot-pulse"></span> Clinical Hub
+              </div>
+              <h4>Premier Hospital Partners</h4>
+              <p>Rigorous bedside rotations across top Bengaluru teaching hospitals</p>
+            </div>
+            <div class="spotlight-courses-list">
+              <a href="clinical-training.html#hospitals" class="spotlight-course-item">
+                <div class="course-code" style="color:#38bdf8; border-color:rgba(56,189,248,0.4); background:rgba(56,189,248,0.18);">500B</div>
+                <div class="course-details">
+                  <strong>KC General Hospital</strong>
+                  <span>Govt. Multi-Specialty Hospital &bull; Malleshwaram</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="clinical-training.html#hospitals" class="spotlight-course-item">
+                <div class="course-code" style="color:#38bdf8; border-color:rgba(56,189,248,0.4); background:rgba(56,189,248,0.18);">686B</div>
+                <div class="course-details">
+                  <strong>Bowring &amp; Lady Curzon Hospital</strong>
+                  <span>Teaching Hospital &bull; Central Bengaluru</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="clinical-training.html#hospitals" class="spotlight-course-item">
+                <div class="course-code" style="color:#38bdf8; border-color:rgba(56,189,248,0.4); background:rgba(56,189,248,0.18);">150B</div>
+                <div class="course-details">
+                  <strong>Spandana Healthcare</strong>
+                  <span>Specialized Psychiatric &amp; Rehab Center</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="clinical-training.html#hospitals" class="spotlight-course-item">
+                <div class="course-code" style="color:#38bdf8; border-color:rgba(56,189,248,0.4); background:rgba(56,189,248,0.18);">PEDI</div>
+                <div class="course-details">
+                  <strong>Indira Gandhi Institute</strong>
+                  <span>Super-Specialty Child Health Hospital</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+            </div>
+            <a href="clinical-training.html" class="btn-spotlight-cta" style="text-decoration:none;">
+              <i class="fa-solid fa-hospital-user"></i> Explore All Clinical Tie-Ups
+            </a>
+            <div class="spotlight-helpline">
+              <i class="fa-solid fa-certificate"></i> Direct bedside clinical postings under senior consultants
             </div>
           </div>
         </div>
@@ -219,44 +388,130 @@
 
       <!-- Slide 3: Global Career Pathways -->
       <div class="hero-slide">
-        <img src="assets/images/hero-3.jpg" alt="Global Nursing Careers" class="slide-bg-img">
+        <picture>
+          <source srcset="assets/images/hero-3.webp" type="image/webp">
+          <img src="assets/images/hero-3.jpg" alt="Global Nursing Careers" class="slide-bg-img">
+        </picture>
         <div class="slide-overlay"></div>
-        <div class="container">
+        <div class="container hero-container-grid">
           <div class="slide-content-wrap">
             <div class="hero-pill-badge">
-              <i class="fa-solid fa-globe"></i> International Career Pathways
+              <span class="live-dot-pulse"></span>
+              <span class="badge-accent">INTERNATIONAL CAREERS</span>
+              <span class="badge-divider"></span>
+              <span><i class="fa-solid fa-globe"></i> UK NHS, USA, Canada &amp; Middle East</span>
             </div>
             <h2 class="hero-title">
-              Global Pathways: <span class="highlight-green">UK NHS, USA, Canada</span> &amp; Middle East
+              Global Pathways: <span class="highlight-gold">International Careers</span><br>
+              <span class="hero-title-sub">in UK, USA, Australia &amp; Gulf</span>
             </h2>
             <p class="hero-description">
-              Dedicated coaching for NCLEX-RN, OET, and IELTS alongside university curriculum, enabling our nursing graduates to excel in premier global healthcare systems.
+              Dedicated in-house coaching for <strong>NCLEX-RN, OET &amp; IELTS</strong> embedded into university curriculum, empowering nursing graduates to excel across global healthcare systems.
             </p>
             <div class="hero-btn-group">
               <a href="placements.html" class="btn-hero-primary">
-                <i class="fa-solid fa-plane-departure"></i> Global Placement Cell
+                <i class="fa-solid fa-plane-departure"></i>
+                <span>Global Placement Cell</span>
+                <i class="fa-solid fa-arrow-right-long btn-arrow-icon"></i>
               </a>
-              <button class="btn-hero-outline" data-open-modal="admissionModal">
-                <i class="fa-solid fa-file-signature"></i> Enroll Today
+              <button class="btn-hero-glass" data-open-modal="admissionModal">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>Enroll for 2025-26</span>
               </button>
+              <button class="btn-hero-outline-gold" data-open-modal="callbackModal">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Request Callback</span>
+              </button>
+            </div>
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">98%</div>
+                <div class="hero-stat-label">Placement Rate</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">₹6-18L</div>
+                <div class="hero-stat-label">Global Starting CTC</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">100%</div>
+                <div class="hero-stat-label">NCLEX &amp; OET Guidance</div>
+              </div>
+              <div class="hero-stat-divider"></div>
+              <div class="hero-stat-item">
+                <div class="hero-stat-num">150+</div>
+                <div class="hero-stat-label">Hospital Recruiters</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Desktop Hero Spotlight Card 3 -->
+          <div class="hero-spotlight-card">
+            <div class="spotlight-card-header">
+              <div class="spotlight-badge">
+                <span class="live-dot-pulse"></span> Global Placements
+              </div>
+              <h4>International Destinations</h4>
+              <p>Direct placement tie-ups and licensing support across premier regions</p>
+            </div>
+            <div class="spotlight-courses-list">
+              <a href="placements.html" class="spotlight-course-item">
+                <div class="course-code" style="color:#a7f3d0; border-color:rgba(167,243,208,0.4); background:rgba(167,243,208,0.18);">UK</div>
+                <div class="course-details">
+                  <strong>United Kingdom (NHS)</strong>
+                  <span>Band 5 Staff Nurse &bull; NMC Registration</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="placements.html" class="spotlight-course-item">
+                <div class="course-code" style="color:#a7f3d0; border-color:rgba(167,243,208,0.4); background:rgba(167,243,208,0.18);">USA</div>
+                <div class="course-details">
+                  <strong>United States Healthcare</strong>
+                  <span>NCLEX-RN Passed &bull; CGFNS Certification</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="placements.html" class="spotlight-course-item">
+                <div class="course-code" style="color:#a7f3d0; border-color:rgba(167,243,208,0.4); background:rgba(167,243,208,0.18);">AUS</div>
+                <div class="course-details">
+                  <strong>Australia &amp; Canada</strong>
+                  <span>AHPRA &bull; NNAS Registration Pathway</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+              <a href="placements.html" class="spotlight-course-item">
+                <div class="course-code" style="color:#a7f3d0; border-color:rgba(167,243,208,0.4); background:rgba(167,243,208,0.18);">GULF</div>
+                <div class="course-details">
+                  <strong>UAE, Saudi Arabia &amp; Qatar</strong>
+                  <span>DHA &bull; HAAD &bull; MOH Licensed Hospitals</span>
+                </div>
+                <i class="fa-solid fa-chevron-right course-arrow"></i>
+              </a>
+            </div>
+            <button class="btn-spotlight-cta" data-open-modal="admissionModal">
+              <i class="fa-solid fa-plane-departure"></i> Apply for Global Nursing Batch
+            </button>
+            <div class="spotlight-helpline">
+              <i class="fa-solid fa-award"></i> Comprehensive NCLEX-RN and language coaching included
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Carousel Nav Controls -->
-      <button class="carousel-nav-btn carousel-prev" aria-label="Previous Slide">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <button class="carousel-nav-btn carousel-next" aria-label="Next Slide">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-
-      <!-- Carousel Dots -->
-      <div class="carousel-dots">
-        <div class="dot active"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+      <!-- Carousel Unified Bottom Bar Controls -->
+      <div class="carousel-bottom-bar">
+        <button class="carousel-nav-btn carousel-prev" aria-label="Previous Slide">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="carousel-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <button class="carousel-nav-btn carousel-next" aria-label="Next Slide">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>
