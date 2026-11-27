@@ -117,7 +117,7 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   TOP TICKER & UTILITY BAR (Kristu Jayanti Style: #01143F)
+   TOP TICKER & UTILITY BAR (InfiniteSlider with Hover Speed Control)
    ========================================================================== */
 
 .top-utility-bar {
@@ -128,24 +128,83 @@ button, input, select, textarea {
   position: relative;
   z-index: 50;
   letter-spacing: 0.3px;
-}
-
-.top-bar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.35rem 0;
-  gap: 1rem;
-  width: 100%;
-}
-
-.top-announcement {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
   overflow: hidden;
+  height: 38px;
+  display: flex;
+  align-items: center;
+}
+
+.top-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  mask-image: linear-gradient(to right, transparent, black 35px, black calc(100% - 35px), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 35px, black calc(100% - 35px), transparent);
+}
+
+.top-slider-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: top-slider-scroll 34s linear infinite;
+}
+
+/* Hover Speed / Pause on Hover (spec: speedOnHover) */
+.top-utility-bar:hover .top-slider-track {
+  animation-play-state: paused;
+}
+
+@keyframes top-slider-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.top-slider-group {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* gap={24} */
+  padding-right: 24px;
+  flex-shrink: 0;
   white-space: nowrap;
-  flex-shrink: 1;
+}
+
+.slider-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+}
+
+.slider-item a {
+  color: rgba(255, 255, 255, 0.85);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: color 0.2s ease;
+}
+
+.slider-item a:hover {
+  color: #fcd34d !important;
+  text-decoration: underline;
+}
+
+.slider-separator {
+  color: rgba(229, 183, 59, 0.45);
+  font-size: 0.85rem;
+  user-select: none;
 }
 
 .badge-pulse {
@@ -169,9 +228,6 @@ button, input, select, textarea {
   70% { box-shadow: 0 0 0 8px rgba(229, 183, 59, 0); }
   100% { box-shadow: 0 0 0 0 rgba(229, 183, 59, 0); }
 }
-  70% { box-shadow: 0 0 0 8px rgba(1, 146, 63, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(1, 146, 63, 0); }
-}
 
 .ticker-text {
   color: rgba(255, 255, 255, 0.95);
@@ -183,35 +239,12 @@ button, input, select, textarea {
   white-space: nowrap;
 }
 
-.ticker-text a {
-  color: #fcd34d;
+.ticker-link {
+  color: #fcd34d !important;
   font-weight: 700;
   text-decoration: underline;
   margin-left: 0.25rem;
   white-space: nowrap;
-}
-
-.top-links {
-  display: flex;
-  align-items: center;
-  gap: 1.15rem;
-  flex-shrink: 0;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.top-links a {
-  color: rgba(255, 255, 255, 0.8);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  transition: color var(--transition-fast);
-}
-
-.top-links a:hover {
-  color: #ffffff;
 }
 
 .top-phone-cta {
@@ -220,7 +253,28 @@ button, input, select, textarea {
   border-radius: var(--radius-full);
   color: #ffffff !important;
   font-weight: 700 !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.top-phone-cta:hover {
+  background: rgba(229, 183, 59, 0.25);
+  border-color: rgba(229, 183, 59, 0.6);
+  color: #fcd34d !important;
+}
+
+.slider-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.slider-highlight i {
+  color: var(--secondary-gold);
 }
 
 /* ==========================================================================
@@ -2596,32 +2650,17 @@ html, body {
   }
 
   /* 2. Top Announcement Bar on Mobile */
-  .top-links {
-    display: none !important;
-  }
-
   .top-utility-bar {
-    padding: 0.25rem 0 !important;
+    height: 36px !important;
+    padding: 0 !important;
+  }
+
+  .top-slider-track {
+    animation-duration: 26s !important;
+  }
+
+  .slider-item {
     font-size: 0.68rem !important;
-  }
-
-  .top-bar-inner {
-    padding: 0.2rem 0.5rem !important;
-    justify-content: center !important;
-  }
-
-  .top-announcement {
-    gap: 0.4rem !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .ticker-text {
-    font-size: 0.68rem !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    max-width: 250px !important;
   }
 
   /* 3. Hero Section on Mobile */
