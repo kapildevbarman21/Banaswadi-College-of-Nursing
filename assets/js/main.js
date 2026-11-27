@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroCarousel();
   initStatsCounters();
   initProgramFilters();
+  initProgram3DTilt();
   initGalleryFilters();
   initModals();
   initMobileDrawer();
@@ -156,32 +157,172 @@ function initStatsCounters() {
 }
 
 /* ==========================================================================
-   4. PROGRAMS FILTER TABS
+   4. PROGRAMS FILTER TABS & FLUID STAGGER TRANSITIONS
    ========================================================================== */
 function initProgramFilters() {
   const filterBtns = document.querySelectorAll('.programs-filter-tabs .filter-btn');
-  const cards = document.querySelectorAll('.program-card');
+  const cards = document.querySelectorAll('.programs-grid .program-card');
 
   if (!filterBtns.length || !cards.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      if (btn.classList.contains('active')) return;
+
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.getAttribute('data-filter');
+      let visibleIndex = 0;
 
       cards.forEach(card => {
         const category = card.getAttribute('data-category');
-        if (filter === 'all' || category === filter) {
+        const match = (filter === 'all' || category === filter);
+
+        if (match) {
           card.style.display = 'flex';
-          card.classList.add('animate-fade-in');
+          card.style.opacity = '0';
+          card.style.transform = 'perspective(1200px) rotateX(8deg) translateY(24px) scale(0.95)';
+          card.style.transition = 'opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+
+          const delay = visibleIndex * 50;
+          visibleIndex++;
+
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'perspective(1200px) rotateX(0deg) translateY(0) scale(1)';
+          }, delay);
         } else {
-          card.style.display = 'none';
-          card.classList.remove('animate-fade-in');
+          card.style.opacity = '0';
+          card.style.transform = 'perspective(1200px) translateY(18px) scale(0.94)';
+          card.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
+          setTimeout(() => {
+            card.style.display = 'none';
+          }, 220);
         }
       });
     });
+  });
+}
+
+/* ==========================================================================
+   4B. PROGRAMS 3D TILT & SPECULAR GLARE MOTION ENGINE
+   ========================================================================== */
+function initProgram3DTilt() {
+  const cards = document.querySelectorAll('.programs-grid .program-card');
+  if (!cards.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) return;
+
+  cards.forEach(card => {
+    let glare = card.querySelector('.program-card-glare');
+    if (!glare) {
+      glare = document.createElement('div');
+      glare.className = 'program-card-glare';
+      card.prepend(glare);
+    }
+
+    let rafId = null;
+    let bounds = null;
+    let isHovering = false;
+
+    const maxTilt = 12; // Degrees maximum tilt
+    const perspective = 1200; // px
+    const scale = 1.028; // Subtle elevation scale
+
+    function updateBounds() {
+      bounds = card.getBoundingClientRect();
+    }
+
+    function onMouseEnter() {
+      isHovering = true;
+      updateBounds();
+      card.classList.remove('is-releasing');
+      card.classList.add('is-tilting');
+    }
+
+    function onMouseMove(e) {
+      if (!isHovering) onMouseEnter();
+      if (!bounds) updateBounds();
+
+      const mouseX = e.clientX - bounds.left;
+      const mouseY = e.clientY - bounds.top;
+
+      // Normalised coordinates (-1 to 1) from card center
+      const xNorm = Math.max(-1, Math.min(1, (mouseX / bounds.width) * 2 - 1));
+      const yNorm = Math.max(-1, Math.min(1, (mouseY / bounds.height) * 2 - 1));
+
+      // 3D rotation angles
+      const rotateX = -(yNorm * maxTilt);
+      const rotateY = xNorm * maxTilt;
+
+      // Specular glare position
+      const glareX = Math.round((mouseX / bounds.width) * 100);
+      const glareY = Math.round((mouseY / bounds.height) * 100);
+
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        card.style.transform = `perspective(${perspective}px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(${scale}, ${scale}, ${scale})`;
+        glare.style.background = `radial-gradient(circle 380px at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.48) 0%, rgba(229, 183, 59, 0.22) 28%, transparent 68%)`;
+      });
+    }
+
+    function onMouseLeave() {
+      isHovering = false;
+      card.classList.remove('is-tilting');
+      card.classList.add('is-releasing');
+
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        card.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    }
+
+    card.addEventListener('mouseenter', onMouseEnter);
+    card.addEventListener('mousemove', onMouseMove, { passive: true });
+    card.addEventListener('mouseleave', onMouseLeave);
+
+    // Touch support for mobile devices
+    card.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        updateBounds();
+        card.classList.remove('is-releasing');
+        card.classList.add('is-tilting');
+      }
+    }, { passive: true });
+
+    card.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 1 && bounds) {
+        const touch = e.touches[0];
+        const touchX = touch.clientX - bounds.left;
+        const touchY = touch.clientY - bounds.top;
+
+        if (touchX >= 0 && touchX <= bounds.width && touchY >= 0 && touchY <= bounds.height) {
+          const xNorm = Math.max(-1, Math.min(1, (touchX / bounds.width) * 2 - 1));
+          const yNorm = Math.max(-1, Math.min(1, (touchY / bounds.height) * 2 - 1));
+          const rotateX = -(yNorm * 7); // Soft 7deg tilt for touch
+          const rotateY = xNorm * 7;
+          const glareX = Math.round((touchX / bounds.width) * 100);
+          const glareY = Math.round((touchY / bounds.height) * 100);
+
+          if (rafId) cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(() => {
+            card.style.transform = `perspective(${perspective}px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+            glare.style.background = `radial-gradient(circle 320px at ${glareX}% ${glareY}%, rgba(255, 255, 255, 0.45) 0%, rgba(229, 183, 59, 0.2) 28%, transparent 68%)`;
+          });
+        }
+      }
+    }, { passive: true });
+
+    card.addEventListener('touchend', () => {
+      card.classList.remove('is-tilting');
+      card.classList.add('is-releasing');
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        card.style.transform = `perspective(${perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    }, { passive: true });
   });
 }
 
