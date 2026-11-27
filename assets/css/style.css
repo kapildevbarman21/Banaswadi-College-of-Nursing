@@ -764,81 +764,180 @@ button, input, select, textarea {
 }
 
 /* ==========================================================================
-   ACCREDITATION & STATS BAR
+   STATUTORY ACCREDITATIONS & RECOGNITIONS GRID (Logo Top + Text Underneath)
    ========================================================================== */
 
 .accreditations-strip {
-  background: var(--bg-slate);
-  padding: 2.5rem 0;
-  border-bottom: 1px solid var(--border-light);
+  background: #f8fafc;
+  padding: 3.5rem 0 4rem 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
 }
 
-.accreditations-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.accred-label {
-  display: flex;
-  flex-direction: column;
+.accreditations-header-block {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2.5rem auto;
 }
 
 .accred-label span.small {
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  color: var(--text-light);
+  color: #0f3b76;
+  background: #e0f2fe;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.65rem;
 }
 
-.accred-label strong {
-  font-size: 1.15rem;
+.accred-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.15rem;
+  font-weight: 700;
   color: var(--primary-navy);
+  margin-bottom: 0.4rem;
+  line-height: 1.25;
 }
 
-.accred-badges-list {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+.accred-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
-.accred-badge-item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+.accred-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.accred-logo-card {
   background: #ffffff;
-  padding: 0.65rem 1.25rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-}
-
-.accred-badge-item i {
-  color: var(--med-green);
-  font-size: 1.35rem;
-}
-
-.accred-badge-item .badge-text {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 1.25rem 1.75rem 1.25rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.accred-badge-item .badge-text strong {
-  font-size: 0.9rem;
+.accred-logo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0d3268, #e5b73b);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.accred-logo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px -4px rgba(13, 50, 104, 0.12);
+  border-color: #cbd5e1;
+}
+
+.accred-logo-card:hover::before {
+  opacity: 1;
+}
+
+.accred-logo-wrap {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 0 0 1px #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+.accred-logo-card:hover .accred-logo-wrap {
+  transform: scale(1.08);
+}
+
+.statutory-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+.accred-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.accred-card-text strong {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
   color: var(--primary-navy);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
-.accred-badge-item .badge-text span {
-  font-size: 0.72rem;
+.accred-card-text .accred-body-role {
+  font-size: 0.78rem;
   color: var(--text-light);
+  line-height: 1.35;
 }
 
-/* Numeric Counters Strip */
+.accred-card-text .accred-badge-pill {
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #0d3268;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 1024px) {
+  .accred-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .accreditations-strip {
+    padding: 2.5rem 0 3rem 0;
+  }
+  .accred-title {
+    font-size: 1.65rem;
+  }
+  .accred-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .accred-logo-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+
 .stats-counter-section {
   padding: 3.5rem 0;
   background: linear-gradient(135deg, var(--primary-navy), var(--primary-navy-dark));
