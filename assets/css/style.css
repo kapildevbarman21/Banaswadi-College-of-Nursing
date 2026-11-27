@@ -5,19 +5,22 @@
    ========================================================================== */
 
 :root {
-  --primary-navy: #0a2240;
-  --primary-navy-dark: #06152b;
-  --primary-navy-light: #12345e;
-  --accent-blue: #004976;
-  --accent-royal: #002c8f;
+  --primary-navy: #071a36;
+  --primary-navy-dark: #041024;
+  --primary-navy-light: #0d2b59;
+  --accent-blue: #0f3b76;
+  --accent-royal: #12468d;
   
   --med-green: #01923f;
   --med-green-dark: #007532;
   --med-green-light: #e8f7ee;
   --med-green-glow: rgba(1, 146, 63, 0.25);
   
-  --accent-gold: #d97706;
+  --accent-gold: #cba03a;
+  --accent-gold-rich: #d4af37;
+  --accent-gold-bright: #e5b73b;
   --accent-gold-light: #fef3c7;
+  --accent-gold-glow: rgba(229, 183, 59, 0.35);
   --accent-amber: #f59e0b;
   
   --text-dark: #0f172a;
@@ -118,10 +121,10 @@ button, input, select, textarea {
    ========================================================================== */
 
 .top-utility-bar {
-  background: #01143F;
+  background: #071a36;
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(229, 183, 59, 0.25);
   position: relative;
   z-index: 50;
   letter-spacing: 0.3px;
@@ -146,23 +149,26 @@ button, input, select, textarea {
 }
 
 .badge-pulse {
-  background: var(--med-green);
-  color: #fff;
+  background: linear-gradient(135deg, #e5b73b, #cba03a);
+  color: #071a36;
   font-size: 0.65rem;
   font-weight: 800;
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  animation: pulse-green 2s infinite;
+  animation: pulse-gold 2s infinite;
   flex-shrink: 0;
 }
 
-@keyframes pulse-green {
-  0% { box-shadow: 0 0 0 0 rgba(1, 146, 63, 0.7); }
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 0 rgba(229, 183, 59, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(229, 183, 59, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(229, 183, 59, 0); }
+}
   70% { box-shadow: 0 0 0 8px rgba(1, 146, 63, 0); }
   100% { box-shadow: 0 0 0 0 rgba(1, 146, 63, 0); }
 }
@@ -222,19 +228,19 @@ button, input, select, textarea {
    ========================================================================== */
 
 .main-header {
-  background: #002C62;
+  background: #0d3268;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid var(--med-green);
-  box-shadow: 0 4px 20px rgba(0, 20, 63, 0.28);
+  border-bottom: 2.5px solid #e5b73b;
+  box-shadow: 0 6px 25px rgba(7, 26, 54, 0.35);
   transition: all var(--transition-normal);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .main-header.scrolled {
-  background: rgba(0, 44, 98, 0.98);
-  box-shadow: 0 10px 30px rgba(0, 20, 63, 0.4);
+  background: rgba(13, 50, 104, 0.98);
+  box-shadow: 0 10px 30px rgba(7, 26, 54, 0.45);
 }
 
 .header-container {
@@ -270,11 +276,11 @@ button, input, select, textarea {
 }
 
 .brand-tag {
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  color: #f59e0b;
+  color: #e5b73b;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
   line-height: 1.1;
 }
 
@@ -289,12 +295,12 @@ button, input, select, textarea {
 }
 
 .brand-title span {
-  color: #4ade80;
+  color: #f3c64c;
 }
 
 .brand-accreditation {
-  font-size: 0.56rem;
-  color: #93c5fd;
+  font-size: 0.58rem;
+  color: #bfdbfe;
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 1.1;
@@ -423,8 +429,8 @@ button, input, select, textarea {
 }
 
 .btn-primary-apply {
-  background: #ffffff;
-  color: #002C62;
+  background: linear-gradient(135deg, #e5b73b, #cba03a);
+  color: #071a36;
   font-size: 0.79rem;
   font-weight: 800;
   padding: 0.44rem 1rem;
@@ -432,7 +438,7 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(229, 183, 59, 0.35);
   transition: all var(--transition-fast);
   border: none;
   cursor: pointer;
@@ -440,10 +446,10 @@ button, input, select, textarea {
 }
 
 .btn-primary-apply:hover {
-  background: var(--med-green);
-  color: #ffffff;
+  background: #ffffff;
+  color: #071a36;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(1, 146, 63, 0.4);
+  box-shadow: 0 6px 20px rgba(229, 183, 59, 0.5);
 }
 
 .mobile-toggle {
