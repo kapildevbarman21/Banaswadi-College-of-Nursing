@@ -505,7 +505,7 @@ button, input, select, textarea {
 
 .hero-carousel-container {
   position: relative;
-  min-height: 720px;
+  height: clamp(480px, 45vw, 620px);
   width: 100%;
 }
 
@@ -515,7 +515,7 @@ button, input, select, textarea {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transform: scale(1.03);
+  transform: scale(1.02);
   display: flex;
   align-items: center;
 }
@@ -534,7 +534,7 @@ button, input, select, textarea {
   object-fit: cover;
   object-position: center;
   z-index: 1;
-  filter: contrast(1.05) brightness(0.95);
+  filter: contrast(1.02) brightness(1.0);
 }
 
 .slide-overlay {
@@ -2719,13 +2719,14 @@ html, body {
 
   /* 3. Hero Section on Mobile */
   .hero-carousel-container {
-    height: auto !important;
-    min-height: 560px !important;
+    height: 320px !important;
+    min-height: 280px !important;
   }
 
   .hero-slide {
-    position: relative !important;
-    min-height: 560px !important;
+    position: absolute !important;
+    min-height: 280px !important;
+    height: 100% !important;
     display: none;
     align-items: center !important;
   }
