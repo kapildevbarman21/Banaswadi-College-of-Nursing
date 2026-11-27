@@ -505,8 +505,9 @@ button, input, select, textarea {
 
 .hero-carousel-container {
   position: relative;
-  height: 670px;
+  height: clamp(520px, 48vw, 680px);
   width: 100%;
+  overflow: hidden;
 }
 
 .hero-slide {
@@ -515,15 +516,22 @@ button, input, select, textarea {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transform: scale(1.03);
-  display: flex;
-  align-items: center;
+  transform: scale(1.02);
+  display: block;
 }
 
 .hero-slide.active {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
+}
+
+.hero-slide picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .slide-bg-img {
@@ -534,6 +542,7 @@ button, input, select, textarea {
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  filter: contrast(1.02) brightness(1.0);
 }
 
 .slide-overlay {
@@ -656,17 +665,18 @@ button, input, select, textarea {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(7, 26, 54, 0.55);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   transition: all var(--transition-fast);
 }
 
@@ -674,6 +684,7 @@ button, input, select, textarea {
   background: var(--med-green);
   border-color: var(--med-green);
   color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
 }
 
 .carousel-prev { left: 1.5rem; }
@@ -681,26 +692,34 @@ button, input, select, textarea {
 
 .carousel-dots {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1.75rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1rem;
+  background: rgba(7, 26, 54, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
   z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .dot.active {
-  width: 32px;
+  width: 28px;
   background: var(--med-green);
+  box-shadow: 0 0 10px rgba(1, 146, 63, 0.8);
 }
 
 /* ==========================================================================
@@ -2384,19 +2403,39 @@ html, body {
 
   /* 3. Hero Section on Mobile */
   .hero-carousel-container {
-    height: auto !important;
-    min-height: 520px !important;
+    height: 320px !important;
+    min-height: 280px !important;
+    max-height: 380px !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
   .hero-slide {
-    position: relative !important;
-    min-height: 520px !important;
-    display: none;
-    align-items: center !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    display: none !important;
   }
 
   .hero-slide.active {
-    display: flex !important;
+    display: block !important;
+  }
+
+  .carousel-nav-btn {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.85rem !important;
+  }
+  .carousel-prev { left: 0.65rem !important; }
+  .carousel-next { right: 0.65rem !important; }
+
+  .carousel-dots {
+    bottom: 1rem !important;
+    padding: 0.35rem 0.75rem !important;
+    gap: 0.45rem !important;
   }
 
   .slide-content-wrap {
