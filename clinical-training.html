@@ -251,5 +251,46 @@
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/form-handler.js"></script>
+<!-- ==========================================================================
+       MOBILE DRAWER NAVIGATION
+       ========================================================================== -->
+  <div class="mobile-drawer-backdrop"></div>
+  <aside class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <div style="display:flex; align-items:center; gap:0.65rem;">
+        <img src="assets/images/emblem.webp" alt="BGI Emblem" style="height:40px; object-fit:contain;">
+        <div>
+          <span style="font-size:0.62rem; font-weight:700; color:#cba03a; display:block; text-transform:uppercase; letter-spacing:0.5px;">Bangalore Group of Inst.</span>
+          <span style="font-weight:800; font-size:0.92rem; color:var(--primary-navy);">Banaswadi Nursing</span>
+        </div>
+      </div>
+      <button class="mobile-drawer-close" style="background:none; border:none; font-size:1.4rem; color:var(--text-dark); cursor:pointer;">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-nav">
+      <a href="index.html" class="mobile-nav-link active">Home <i class="fa-solid fa-angle-right"></i></a>
+      <a href="about.html" class="mobile-nav-link">About College <i class="fa-solid fa-angle-right"></i></a>
+      <a href="programs.html" class="mobile-nav-link">Nursing Programs <i class="fa-solid fa-angle-right"></i></a>
+      <a href="clinical-training.html" class="mobile-nav-link">Clinical Training &amp; Hospitals <i class="fa-solid fa-angle-right"></i></a>
+      <a href="admissions.html" class="mobile-nav-link">Admissions 2025-26 <i class="fa-solid fa-angle-right"></i></a>
+      <a href="campus-life.html" class="mobile-nav-link">Campus Life &amp; Hostels <i class="fa-solid fa-angle-right"></i></a>
+      <a href="placements.html" class="mobile-nav-link">Placements &amp; Careers <i class="fa-solid fa-angle-right"></i></a>
+      <a href="contact.html" class="mobile-nav-link">Contact &amp; Location <i class="fa-solid fa-angle-right"></i></a>
+    </div>
+
+    <div style="padding:1.5rem; margin-top:auto; border-top:1px solid var(--border-light);">
+      <button class="btn-primary-apply" style="width:100%; justify-content:center;" data-open-modal="admissionModal">
+        <i class="fa-solid fa-paper-plane"></i> Apply Online
+      </button>
+      <div style="text-align:center; margin-top:1rem; font-size:0.8rem; color:var(--text-light);">
+        <i class="fa-solid fa-phone"></i> +91 80 2844 5555
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MODAL: ADMISSIONS
 </body>
 </html>
