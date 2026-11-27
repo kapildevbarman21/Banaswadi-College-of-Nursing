@@ -243,6 +243,56 @@ button, input, select, textarea {
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.22);
 }
 
+/* ==========================================================================
+   TRANSPARENT FLOATING HEADER ON HOME PAGE (Full 4K Photo View)
+   ========================================================================== */
+.home-page .top-utility-bar {
+  background: rgba(7, 26, 54, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(229, 183, 59, 0.25);
+  position: relative;
+  z-index: 1001;
+}
+
+.home-page .main-header {
+  background: rgba(7, 26, 54, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1.5px solid rgba(229, 183, 59, 0.45);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-normal);
+}
+
+.home-page .main-header.scrolled {
+  background: rgba(13, 50, 104, 0.96);
+  border-bottom: 2.5px solid #e5b73b;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.home-page .hero-slider-section {
+  margin-top: -100px;
+}
+
+.home-page .hero-carousel-container {
+  height: 100vh;
+  min-height: 580px;
+}
+
+@media (max-width: 768px) {
+  .home-page .hero-slider-section {
+    margin-top: -88px;
+  }
+  .home-page .hero-carousel-container {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 500px !important;
+  }
+}
+
 .header-container {
   display: flex;
   align-items: center;
