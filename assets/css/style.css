@@ -233,14 +233,14 @@ button, input, select, textarea {
   top: 0;
   z-index: 1000;
   border-bottom: 2.5px solid #e5b73b;
-  box-shadow: 0 6px 25px rgba(7, 26, 54, 0.35);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
   transition: all var(--transition-normal);
   backdrop-filter: blur(10px);
 }
 
 .main-header.scrolled {
   background: rgba(13, 50, 104, 0.98);
-  box-shadow: 0 10px 30px rgba(7, 26, 54, 0.45);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.22);
 }
 
 .header-container {
@@ -539,7 +539,7 @@ button, input, select, textarea {
 .slide-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(6, 21, 43, 0.94) 0%, rgba(10, 34, 64, 0.82) 55%, rgba(6, 21, 43, 0.4) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.58) 55%, rgba(0, 0, 0, 0.28) 100%);
   z-index: 2;
 }
 
@@ -732,7 +732,7 @@ button, input, select, textarea {
   background: #ffffff;
   border-radius: var(--radius-md);
   padding: 1.35rem 1.25rem;
-  box-shadow: 0 10px 25px -5px rgba(10, 34, 64, 0.12), 0 8px 10px -6px rgba(10, 34, 64, 0.08);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
   border: 1px solid var(--border-light);
   display: flex;
   align-items: flex-start;
@@ -745,7 +745,7 @@ button, input, select, textarea {
 
 .quick-action-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 22px 40px rgba(10, 34, 64, 0.18);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
   border-color: #0d3268;
 }
 
