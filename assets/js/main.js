@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initScrollTop();
   initSearch();
+  initInfiniteSlider();
 });
 
 /* ==========================================================================
@@ -265,6 +266,16 @@ function initModals() {
     });
   });
 
+  // Delegated trigger for dynamically added or cloned elements (e.g. InfiniteSlider cards)
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-open-modal]');
+    if (trigger) {
+      e.preventDefault();
+      const modalId = trigger.getAttribute('data-open-modal');
+      openModal(modalId);
+    }
+  });
+
   // Close when clicking backdrop
   document.querySelectorAll('.modal-backdrop').forEach(modal => {
     modal.addEventListener('click', (e) => {
@@ -407,3 +418,85 @@ window.showToast = function(msg) {
     toast.classList.remove('show');
   }, 4000);
 };
+
+/* ==========================================================================
+   INFINITE SLIDER WITH SPEED-ON-HOVER (speedOnHover={20}, gap={24})
+   ========================================================================== */
+function initInfiniteSlider() {
+  const slider = document.querySelector('.infinite-slider');
+  const track = document.querySelector('.infinite-slider-track');
+  if (!slider || !track) return;
+
+  const originalCards = Array.from(track.children);
+  if (originalCards.length === 0) return;
+
+  // Clone 2 extra sets to ensure continuous seamless wrap
+  const set1 = originalCards.map(c => c.cloneNode(true));
+  const set2 = originalCards.map(c => c.cloneNode(true));
+  set1.forEach(c => track.appendChild(c));
+  set2.forEach(c => track.appendChild(c));
+
+  // Speeds in px/sec: default ~45px/s; hover ~15px/s (speedOnHover=20)
+  const defaultSpeed = parseFloat(slider.dataset.speed || '45');
+  const hoverSpeed = parseFloat(slider.dataset.speedHover || '15');
+
+  let currentTranslateX = 0;
+  let targetVelocity = defaultSpeed / 60;
+  let currentVelocity = targetVelocity;
+  let isHovered = false;
+  let isTouching = false;
+  let lastTimestamp = performance.now();
+
+  function getSetWidth() {
+    let w = 0;
+    const gap = parseFloat(window.getComputedStyle(track).gap) || 24;
+    for (let i = 0; i < originalCards.length; i++) {
+      w += track.children[i].getBoundingClientRect().width + gap;
+    }
+    return w;
+  }
+
+  let oneSetWidth = getSetWidth();
+  window.addEventListener('resize', () => {
+    oneSetWidth = getSetWidth();
+  });
+
+  slider.addEventListener('mouseenter', () => {
+    isHovered = true;
+    targetVelocity = hoverSpeed / 60;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isHovered = false;
+    targetVelocity = defaultSpeed / 60;
+  });
+
+  slider.addEventListener('touchstart', () => {
+    isTouching = true;
+    targetVelocity = 0;
+  }, { passive: true });
+
+  slider.addEventListener('touchend', () => {
+    isTouching = false;
+    targetVelocity = defaultSpeed / 60;
+  }, { passive: true });
+
+  function render(now) {
+    const delta = Math.min((now - lastTimestamp) / 1000 * 60, 2);
+    lastTimestamp = now;
+
+    // Smooth inertia interpolation
+    currentVelocity += (targetVelocity - currentVelocity) * 0.1;
+
+    currentTranslateX -= currentVelocity * delta;
+
+    if (oneSetWidth > 0 && Math.abs(currentTranslateX) >= oneSetWidth) {
+      currentTranslateX += oneSetWidth;
+    }
+
+    track.style.transform = `translate3d(${currentTranslateX}px, 0, 0)`;
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}

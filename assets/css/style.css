@@ -703,37 +703,50 @@ button, input, select, textarea {
   background: var(--med-green);
 }
 
-/* Floating Quick Action Cards (Kristu Jayanti Signature Feature) */
+/* Floating Quick Action Cards (Infinite Slider with Speed-on-Hover) */
 .hero-quick-actions-bar {
   position: relative;
   margin-top: -4.5rem;
   z-index: 20;
 }
 
-.quick-actions-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
+.infinite-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0 24px 0;
+  mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+
+.infinite-slider-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  will-change: transform;
 }
 
 .quick-action-card {
+  flex: 0 0 310px;
+  width: 310px;
   background: #ffffff;
   border-radius: var(--radius-md);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-xl);
+  padding: 1.35rem 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(10, 34, 64, 0.12), 0 8px 10px -6px rgba(10, 34, 64, 0.08);
   border: 1px solid var(--border-light);
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  transition: all var(--transition-normal);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   text-decoration: none;
   cursor: pointer;
+  user-select: none;
 }
 
 .quick-action-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 25px 45px rgba(10, 34, 64, 0.16);
-  border-color: var(--med-green);
+  box-shadow: 0 22px 40px rgba(10, 34, 64, 0.18);
+  border-color: #0d3268;
 }
 
 .action-icon-circle {
@@ -2314,16 +2327,23 @@ html, body {
   /* 4. Quick Actions Bar on Mobile */
   .hero-quick-actions-bar {
     margin-top: 1.5rem !important;
-    padding: 0 0.85rem !important;
+    padding: 0 0.5rem !important;
   }
 
-  .quick-actions-grid {
-    grid-template-columns: 1fr !important;
-    gap: 0.85rem !important;
+  .infinite-slider {
+    padding: 8px 0 16px 0 !important;
+    mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent) !important;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent) !important;
+  }
+
+  .infinite-slider-track {
+    gap: 16px !important;
   }
 
   .quick-action-card {
-    padding: 1rem 1.2rem !important;
+    flex: 0 0 280px !important;
+    width: 280px !important;
+    padding: 1.15rem 1rem !important;
   }
 
   /* 5. Sections & Grids on Mobile */
