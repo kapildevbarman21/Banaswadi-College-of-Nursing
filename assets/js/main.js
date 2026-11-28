@@ -108,9 +108,10 @@ function initHeroCarousel() {
 }
 
 /* ==========================================================================
-   3. ANIMATED NUMBER COUNTERS
+   3. ANIMATED NUMBER COUNTERS & 3D INTERACTIVE CARDS
    ========================================================================== */
 function initStatsCounters() {
+  const cards = document.querySelectorAll('.stat-card');
   const counters = document.querySelectorAll('.stat-number');
   if (!counters.length) return;
 
@@ -120,29 +121,48 @@ function initStatsCounters() {
     entries.forEach(entry => {
       if (entry.isIntersecting && !hasAnimated) {
         hasAnimated = true;
-        counters.forEach(counter => {
+
+        // 1. Staggered reveal of stats cards
+        cards.forEach((card, idx) => {
+          setTimeout(() => {
+            card.classList.add('stat-revealed');
+          }, idx * 130);
+        });
+
+        // 2. High-precision eased counter animation
+        counters.forEach((counter, idx) => {
           const target = parseFloat(counter.getAttribute('data-target') || '0');
-          const suffix = counter.getAttribute('data-suffix') || '';
           const isDecimal = counter.getAttribute('data-decimal') === 'true';
-          const duration = 2000;
-          const startTime = performance.now();
+          const duration = 2200;
+          const startTime = performance.now() + (idx * 90);
 
           function updateCounter(currentTime) {
+            if (currentTime < startTime) {
+              requestAnimationFrame(updateCounter);
+              return;
+            }
+
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease out cubic
-            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            // Exponential ease out for smooth deceleration
+            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
             
             const currentVal = isDecimal 
               ? (easeProgress * target).toFixed(1)
               : Math.floor(easeProgress * target);
 
-            counter.textContent = currentVal + suffix;
+            counter.textContent = currentVal;
 
             if (progress < 1) {
               requestAnimationFrame(updateCounter);
             } else {
-              counter.textContent = (isDecimal ? target.toFixed(1) : target) + suffix;
+              counter.textContent = isDecimal ? target.toFixed(1) : target;
+              // Subtle pulse celebration on complete
+              const suffix = counter.nextElementSibling;
+              if (suffix && suffix.classList.contains('stat-suffix')) {
+                suffix.style.transform = 'scale(1.25) rotate(6deg)';
+                setTimeout(() => { suffix.style.transform = ''; }, 350);
+              }
             }
           }
 
@@ -150,10 +170,36 @@ function initStatsCounters() {
         });
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.25 });
 
   const statsSection = document.querySelector('.stats-counter-section');
   if (statsSection) observer.observe(statsSection);
+
+  // 3. Desktop 3D perspective tilt & specular glare
+  if (window.matchMedia('(pointer: fine)').matches) {
+    cards.forEach(card => {
+      const glare = card.querySelector('.stat-card-glare');
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -7;
+        const rotateY = ((x - centerX) / centerX) * 7;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale3d(1.025, 1.025, 1.025)`;
+        if (glare) {
+          glare.style.setProperty('--mouse-x', `${(x / rect.width * 100).toFixed(1)}%`);
+          glare.style.setProperty('--mouse-y', `${(y / rect.height * 100).toFixed(1)}%`);
+        }
+      });
+
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
 }
 
 /* ==========================================================================
