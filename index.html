@@ -427,22 +427,30 @@
         <span class="section-tag"><i class="fa-solid fa-book-open"></i> Academic Offerings</span>
         <h2 class="section-title">Explore Nursing Programs</h2>
         <p class="section-subtitle">
-          Designed in accordance with RGUHS and INC guidelines, harmonizing clinical rigor, patient advocacy, cutting-edge technology, and compassionate patient care.
+          Approved by INC, KSNC, PCI, AICTE &amp; State Boards, affiliated to RGUHS &amp; Bangalore University. Delivering clinical rigor, high-demand industry specializations, and complete fee transparency across healthcare, technology, and management.
         </p>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="programs-filter-tabs">
-        <button class="filter-btn active" data-filter="all">All Programs</button>
-        <button class="filter-btn" data-filter="ug">Undergraduate (UG)</button>
-        <button class="filter-btn" data-filter="pg">Postgraduate (PG)</button>
-        <button class="filter-btn" data-filter="diploma">Diploma Courses</button>
+      <!-- Category Filter Tabs & Master Fee Schedule CTA -->
+      <div class="programs-filter-wrapper">
+        <div class="programs-filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Programs</button>
+          <button class="filter-btn" data-filter="nursing">Nursing</button>
+          <button class="filter-btn" data-filter="pharmacy">Pharmacy</button>
+          <button class="filter-btn" data-filter="paramedical">Paramedical</button>
+          <button class="filter-btn" data-filter="engineering">Engineering</button>
+          <button class="filter-btn" data-filter="management">Management &amp; IT</button>
+          <button class="filter-btn" data-filter="puc">PU College</button>
+        </div>
+        <button class="btn-schedule-trigger" data-open-modal="feeScheduleModal">
+          <i class="fa-solid fa-file-invoice-dollar"></i> View Official Fee Brochure
+        </button>
       </div>
 
       <!-- Programs Grid -->
       <div class="programs-grid">
         <!-- 1. B.Sc. Nursing -->
-        <div class="program-card" data-category="ug">
+        <div class="program-card" data-category="nursing">
           <div class="program-card-glare"></div>
           <span class="program-card-badge">INC &amp; KSNC Approved</span>
           <div class="program-img-wrap">
@@ -457,91 +465,40 @@
               </div>
               <div class="meta-row">
                 <span class="label">Eligibility:</span>
-                <span class="val">10+2 with PCB (min 45%) + English</span>
+                <span class="val">+2 / PUC with PCB &amp; 45% pass</span>
               </div>
-              <div class="meta-row">
-                <span class="label">Clinical Training:</span>
-                <span class="val">1000+ Hours in Super-Specialty Hospitals</span>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹8,50,000 <small>Incl. Food &amp; Stay</small></span>
               </div>
             </div>
             <p class="program-desc">
-              Comprehensive 4-year degree preparing professional nurses with in-depth knowledge of anatomy, pharmacology, adult health, community nursing, OBG, and intensive care.
+              Comprehensive 4-year degree preparing professional nurses with in-depth clinical postings in 1000+ bed hospitals, anatomy &amp; simulation labs, and global licensure (NCLEX/OET) readiness.
             </p>
             <div class="program-card-actions">
               <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
-              <a href="programs.html#bsc-nursing" class="btn-card-details">Curriculum</a>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <!-- Fee Schedule Drawer -->
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹30,000</td></tr>
+                <tr><td>1st Year Tuition</td><td>₹3,25,000</td></tr>
+                <tr><td>2nd Year Tuition</td><td>₹1,65,000</td></tr>
+                <tr><td>3rd Year Tuition</td><td>₹1,65,000</td></tr>
+                <tr><td>4th Year Tuition</td><td>₹1,65,000</td></tr>
+                <tr><td>Total Package</td><td>₹8,50,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-check"></i> Includes Food &amp; Accommodation for all 4 years.</div>
             </div>
           </div>
         </div>
 
-        <!-- 2. Post Basic B.Sc. Nursing -->
-        <div class="program-card" data-category="ug">
-          <div class="program-card-glare"></div>
-          <span class="program-card-badge">RGUHS Affiliated</span>
-          <div class="program-img-wrap">
-            <img src="assets/images/hero-1.jpg" alt="Post Basic B.Sc Nursing">
-          </div>
-          <div class="program-body">
-            <h3 class="program-title">Post Basic B.Sc. Nursing</h3>
-            <div class="program-meta-list">
-              <div class="meta-row">
-                <span class="label">Duration:</span>
-                <span class="val">2 Years Full-Time</span>
-              </div>
-              <div class="meta-row">
-                <span class="label">Eligibility:</span>
-                <span class="val">GNM Qualified + Registered Nurse (RN/RM)</span>
-              </div>
-              <div class="meta-row">
-                <span class="label">Scope:</span>
-                <span class="val">Leadership &amp; Overseas Nursing Registration</span>
-              </div>
-            </div>
-            <p class="program-desc">
-              Tailored for registered diploma nurses aiming to elevate their clinical qualifications to a Bachelor's degree, facilitating leadership roles and international migration.
-            </p>
-            <div class="program-card-actions">
-              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
-              <a href="programs.html#pbbsc-nursing" class="btn-card-details">Curriculum</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. M.Sc. Nursing -->
-        <div class="program-card" data-category="pg">
-          <div class="program-card-glare"></div>
-          <span class="program-card-badge">Postgraduate Specialization</span>
-          <div class="program-img-wrap">
-            <img src="assets/images/anatomy-lab.jpg" alt="M.Sc Nursing">
-          </div>
-          <div class="program-body">
-            <h3 class="program-title">M.Sc. Nursing (5 Specialties)</h3>
-            <div class="program-meta-list">
-              <div class="meta-row">
-                <span class="label">Duration:</span>
-                <span class="val">2 Years Full-Time</span>
-              </div>
-              <div class="meta-row">
-                <span class="label">Specialties:</span>
-                <span class="val">Med-Surg, OBG, Paediatrics, Psych, Community</span>
-              </div>
-              <div class="meta-row">
-                <span class="label">Eligibility:</span>
-                <span class="val">B.Sc. / P.B.B.Sc. with 55% + 1 Yr Exp.</span>
-              </div>
-            </div>
-            <p class="program-desc">
-              Master's program developing nurse practitioners, clinical specialists, researchers, and nursing educators across 5 key clinical and community healthcare domains.
-            </p>
-            <div class="program-card-actions">
-              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
-              <a href="programs.html#msc-nursing" class="btn-card-details">Curriculum</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. GNM Diploma -->
-        <div class="program-card" data-category="diploma">
+        <!-- 2. General Nursing & Midwifery (GNM) -->
+        <div class="program-card" data-category="nursing">
           <div class="program-card-glare"></div>
           <span class="program-card-badge">KSNC &amp; INC Recognized</span>
           <div class="program-img-wrap">
@@ -556,85 +513,534 @@
               </div>
               <div class="meta-row">
                 <span class="label">Eligibility:</span>
-                <span class="val">10+2 Any Stream (min 40%) with English</span>
+                <span class="val">+2 / PUC (Any Stream, 40%)</span>
               </div>
-              <div class="meta-row">
-                <span class="label">Internship:</span>
-                <span class="val">6 Months Supervised Clinical Internship</span>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹3,95,000 <small>Incl. Food &amp; Stay</small></span>
               </div>
             </div>
             <p class="program-desc">
-              Practically oriented diploma course focusing on core bedside nursing fundamentals, maternal &amp; child health, psychiatric care, and community wellness.
+              Practically oriented 3-year clinical diploma focusing on core bedside nursing fundamentals, maternal &amp; child health, emergency triage, and immediate hospital employability.
             </p>
             <div class="program-card-actions">
               <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
-              <a href="programs.html#gnm" class="btn-card-details">Curriculum</a>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹20,000</td></tr>
+                <tr><td>1st Year Tuition</td><td>₹1,95,000</td></tr>
+                <tr><td>2nd Year Tuition</td><td>₹90,000</td></tr>
+                <tr><td>3rd Year Tuition</td><td>₹90,000</td></tr>
+                <tr><td>Total Package</td><td>₹3,95,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-check"></i> Includes Food &amp; Accommodation.</div>
             </div>
           </div>
         </div>
 
-        <!-- 5. Critical Care & Emergency Nursing -->
-        <div class="program-card" data-category="ug">
+        <!-- 3. Post Basic B.Sc. Nursing -->
+        <div class="program-card" data-category="nursing">
           <div class="program-card-glare"></div>
-          <span class="program-card-badge">Value-Added Certification</span>
+          <span class="program-card-badge">RGUHS Affiliated</span>
           <div class="program-img-wrap">
-            <img src="assets/images/hero-2.jpg" alt="Emergency Nursing">
+            <img src="assets/images/hero-1.webp" alt="Post Basic B.Sc Nursing">
           </div>
           <div class="program-body">
-            <h3 class="program-title">Critical Care &amp; Emergency Nursing</h3>
+            <h3 class="program-title">Post Basic B.Sc. Nursing (P.B.B.Sc)</h3>
             <div class="program-meta-list">
               <div class="meta-row">
                 <span class="label">Duration:</span>
-                <span class="val">6 Months Integrated Module</span>
+                <span class="val">2 Years Full-Time</span>
               </div>
               <div class="meta-row">
-                <span class="label">Focus:</span>
-                <span class="val">Ventilator Care, ECG, BLS/ACLS Simulation</span>
+                <span class="label">Eligibility:</span>
+                <span class="val">GNM Qualified (Registered RN/RM)</span>
               </div>
-              <div class="meta-row">
-                <span class="label">Certification:</span>
-                <span class="val">AHA Certified Life Support Modules</span>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹2,50,000</span>
               </div>
             </div>
             <p class="program-desc">
-              Specialized skill-enhancement course for final year students and registered nurses providing practical mastery in intensive care units and trauma triage.
+              Fast-track 2-year bachelor program tailored for registered diploma nurses aiming to elevate their academic qualifications to a B.Sc. degree, opening nursing leadership and overseas migration.
             </p>
             <div class="program-card-actions">
               <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
-              <a href="programs.html#certifications" class="btn-card-details">Details</a>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹25,000</td></tr>
+                <tr><td>1st Year Tuition</td><td>₹1,55,000</td></tr>
+                <tr><td>2nd Year Tuition</td><td>₹70,000</td></tr>
+                <tr><td>Total Course Fees</td><td>₹2,50,000</td></tr>
+              </table>
             </div>
           </div>
         </div>
 
-        <!-- 6. Global Healthcare & NCLEX-RN Pathway -->
-        <div class="program-card" data-category="ug">
+        <!-- 4. M.Sc. Nursing (5 Specialties) -->
+        <div class="program-card" data-category="nursing">
           <div class="program-card-glare"></div>
-          <span class="program-card-badge">International Career Track</span>
+          <span class="program-card-badge">Postgraduate Specialization</span>
           <div class="program-img-wrap">
-            <img src="assets/images/nurse-graduate.jpg" alt="Global Pathways">
+            <img src="assets/images/anatomy-lab.jpg" alt="M.Sc Nursing">
           </div>
           <div class="program-body">
-            <h3 class="program-title">NCLEX-RN, OET &amp; IELTS Training</h3>
+            <h3 class="program-title">M.Sc. Nursing (5 Specialties)</h3>
             <div class="program-meta-list">
               <div class="meta-row">
-                <span class="label">Target Destinations:</span>
-                <span class="val">UK NHS, USA, Canada, Australia, UAE</span>
+                <span class="label">Duration:</span>
+                <span class="val">2 Years Full-Time</span>
               </div>
               <div class="meta-row">
-                <span class="label">Mentorship:</span>
-                <span class="val">Overseas Certified Nursing Educators</span>
+                <span class="label">Eligibility:</span>
+                <span class="val">B.Sc. / P.B.B.Sc. Nursing Pass</span>
               </div>
-              <div class="meta-row">
-                <span class="label">Track Record:</span>
-                <span class="val">High First-Attempt Pass Rates</span>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹2,20,000 – ₹3,00,000</span>
               </div>
             </div>
             <p class="program-desc">
-              Dedicated coaching cell preparing Banaswadi Nursing students to clear overseas licensing exams and secure lucrative employment across global hospital networks.
+              Advanced master’s developing nurse specialists, educators, and clinical researchers in 5 disciplines: Medical Surgical, OBG, Paediatrics, Psychiatry, and Community Health.
             </p>
             <div class="program-card-actions">
               <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
-              <a href="placements.html#global-pathways" class="btn-card-details">Pathways</a>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Specialty</th><th>1st Yr</th><th>2nd Yr</th><th>Total</th></tr>
+                <tr><td>Medical Surgical</td><td>₹2,00,000</td><td>₹70,000</td><td>₹3,00,000</td></tr>
+                <tr><td>Obstetrics &amp; Gynae (OBG)</td><td>₹1,55,000</td><td>₹70,000</td><td>₹2,50,000</td></tr>
+                <tr><td>Pediatric Nursing</td><td>₹1,45,000</td><td>₹70,000</td><td>₹2,40,000</td></tr>
+                <tr><td>Psychiatric Nursing</td><td>₹1,35,000</td><td>₹70,000</td><td>₹2,30,000</td></tr>
+                <tr><td>Community Health</td><td>₹1,25,000</td><td>₹70,000</td><td>₹2,20,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Admission Fee: ₹30,000 for Med-Surg, ₹25,000 for other branches.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Bachelor of Pharmacy (B.Pharm) -->
+        <div class="program-card" data-category="pharmacy">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">PCI Approved • 4 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/pharmacy.webp" alt="Bachelor of Pharmacy">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">Bachelor of Pharmacy (B.Pharm)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">4 Years Full-Time</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">10+2 with PCB or PCM (min 45%)</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹6,75,000 <small>Incl. Food &amp; Stay</small></span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Premier pharmaceutical degree covering pharmacology, medicinal chemistry, clinical trial management, drug formulation, and industrial manufacturing technologies.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹25,000</td></tr>
+                <tr><td>1st Year Tuition</td><td>₹2,60,000</td></tr>
+                <tr><td>2nd Year Tuition</td><td>₹1,30,000</td></tr>
+                <tr><td>3rd Year Tuition</td><td>₹1,30,000</td></tr>
+                <tr><td>4th Year Tuition</td><td>₹1,30,000</td></tr>
+                <tr><td>Total Package</td><td>₹6,75,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-check"></i> Includes Food &amp; Accommodation for all 4 years.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. B.Pharm Lateral Entry -->
+        <div class="program-card" data-category="pharmacy">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">Direct 2nd Year Entry</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/pharmacy.webp" alt="B.Pharm Lateral Entry">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">B.Pharm (Lateral Entry)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">3 Years (Direct 2nd Yr)</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">Pass in D.Pharm (PCI Recognized)</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹4,95,000 <small>Incl. Food &amp; Stay</small></span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Direct entry into the second year of Bachelor of Pharmacy for diploma holders in pharmacy, saving one full academic year and accelerating high-level industry placement.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹20,000</td></tr>
+                <tr><td>1st Year (2nd Yr Direct)</td><td>₹2,25,000</td></tr>
+                <tr><td>2nd Year (3rd Yr)</td><td>₹1,25,000</td></tr>
+                <tr><td>3rd Year (4th Yr)</td><td>₹1,25,000</td></tr>
+                <tr><td>Total Package</td><td>₹4,95,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-check"></i> Includes Food &amp; Accommodation.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Diploma in Pharmacy (D.Pharm) -->
+        <div class="program-card" data-category="pharmacy">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">PCI Approved • 2 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/nutrition-lab.jpg" alt="Diploma in Pharmacy">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">Diploma in Pharmacy (D.Pharm)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">2 Years Full-Time</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">10+2 with PCB or PCM (40%)</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹1,75,000</span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Foundational 2-year pharmacy diploma preparing registered pharmacists for retail chemist licensing, hospital dispensary operations, and medical distribution chains.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹20,000</td></tr>
+                <tr><td>1st Year Tuition</td><td>₹1,15,000</td></tr>
+                <tr><td>2nd Year Tuition</td><td>₹40,000</td></tr>
+                <tr><td>Total Course Fees</td><td>₹1,75,000</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Paramedical Diplomas (5 Specializations) -->
+        <div class="program-card" data-category="paramedical">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">Paramedical Board Approved</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/paramedical.webp" alt="Paramedical Sciences">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">Paramedical Sciences (5 Diplomas)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">3 Yrs (10th/Arts) / 2 Yrs (Science)</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Specialties:</span>
+                <span class="val">DMLT, DDT, DMIT, DHI, DOT &amp; AT</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹2,30,000 <small>All 5 Branches</small></span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Specialized clinical diagnostic training: DMLT (Lab Tech), DDT (Dialysis), DMIT (Imaging/Radiology), DHI (Health Inspector), and DOT &amp; AT (Operation Theatre &amp; Anaesthesia).
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹15,000</td></tr>
+                <tr><td>1st Year Tuition</td><td>₹1,15,000</td></tr>
+                <tr><td>2nd Year Tuition</td><td>₹50,000</td></tr>
+                <tr><td>3rd Year Tuition</td><td>₹50,000</td></tr>
+                <tr><td>Total Fees (Any Branch)</td><td>₹2,30,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Eligibility: 10th &amp; H.S. (Arts/Commerce): 3 Years, H.S. (Science): 2 Years.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. BE / B.Tech Engineering -->
+        <div class="program-card" data-category="engineering">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">AICTE Approved • 4 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/engineering.webp" alt="BE B.Tech Engineering">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">BE / B.Tech (CSE, AI &amp; ML, AI &amp; DS, ECE, ISE)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">4 Years (8 Semesters)</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">10+2 with Physics, Math &amp; Chem</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹6,15,000 – ₹7,95,000</span>
+              </div>
+            </div>
+            <p class="program-desc">
+              High-impact 4-year engineering degrees in high-demand domains: Computer Science, AI &amp; Machine Learning, AI &amp; Data Science, Electronics &amp; Communication, and Information Science.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Branch</th><th>1st Yr</th><th>2nd-4th Yr</th><th>Total</th></tr>
+                <tr><td>CSE (AI &amp; ML)</td><td>₹2,45,000</td><td>₹1,75,000/yr</td><td>₹7,95,000</td></tr>
+                <tr><td>CSE (AI &amp; DS)</td><td>₹2,35,000</td><td>₹1,75,000/yr</td><td>₹7,85,000</td></tr>
+                <tr><td>Computer Science (Core)</td><td>₹2,25,000</td><td>₹1,75,000/yr</td><td>₹7,75,000</td></tr>
+                <tr><td>Electronics &amp; Comm (ECE)</td><td>₹2,25,000</td><td>₹1,25,000/yr</td><td>₹6,25,000</td></tr>
+                <tr><td>Information Science (ISE)</td><td>₹2,15,000</td><td>₹1,25,000/yr</td><td>₹6,15,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Admission fees for all branches: ₹25,000 (included in total fee).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. BBA Professional Management -->
+        <div class="program-card" data-category="management">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">Bangalore University • 3 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/management.webp" alt="BBA Management">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">BBA (Aviation, Digital, Data, Logistics)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">3 Years Full-Time</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">PUC / +2 Pass (Any Stream)</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹2,25,000 – ₹2,90,000</span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Bachelor of Business Administration offering modern industry specializations in Aviation Management, Digital Marketing, Data Analysis, E-Commerce, and Supply Chain Logistics.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Program Stream</th><th>1st Yr</th><th>2nd-3rd Yr</th><th>Total</th></tr>
+                <tr><td>BBA (General)</td><td>₹1,00,000</td><td>₹55,000/yr</td><td>₹2,25,000</td></tr>
+                <tr><td>BBA + Aviation Mgmt</td><td>₹1,20,000</td><td>₹55,000/yr</td><td>₹2,45,000</td></tr>
+                <tr><td>BBA + Digital Marketing</td><td>₹1,35,000</td><td>₹70,000/yr</td><td>₹2,90,000</td></tr>
+                <tr><td>BBA + Data Analytics</td><td>₹1,35,000</td><td>₹70,000/yr</td><td>₹2,90,000</td></tr>
+                <tr><td>BBA + Logistics / E-Com</td><td>₹1,35,000</td><td>₹70,000/yr</td><td>₹2,90,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Admission Fee: ₹15,000 across all BBA programs.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. BCA (Artificial Intelligence, Cyber Security, Cloud, Data) -->
+        <div class="program-card" data-category="management">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">Tech Industry Ready • 3 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/hero-campus-3.webp" alt="BCA Computer Applications">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">BCA (AI, Cyber Security, Cloud, Python)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">3 Years Full-Time</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">PUC / +2 Pass</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹2,25,000 – ₹2,90,000</span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Bachelor of Computer Applications integrated with trending technology tracks: Artificial Intelligence, Cyber Security, Ethical Hacking, Cloud Computing, Data Analytics, and Python.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Program Stream</th><th>1st Yr</th><th>2nd-3rd Yr</th><th>Total</th></tr>
+                <tr><td>BCA (General)</td><td>₹1,00,000</td><td>₹55,000/yr</td><td>₹2,25,000</td></tr>
+                <tr><td>BCA + AI (Artificial Intel)</td><td>₹1,35,000</td><td>₹70,000/yr</td><td>₹2,90,000</td></tr>
+                <tr><td>BCA + Cyber Security</td><td>₹1,35,000</td><td>₹70,000/yr</td><td>₹2,90,000</td></tr>
+                <tr><td>BCA + Ethical Hacking</td><td>₹1,35,000</td><td>₹70,000/yr</td><td>₹2,90,000</td></tr>
+                <tr><td>BCA + Cloud / Python / Data</td><td>₹1,35,000</td><td>₹70,000/yr</td><td>₹2,90,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Admission Fee: ₹15,000 across all BCA specializations.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. B.Com Professional Commerce Programs -->
+        <div class="program-card" data-category="management">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">Global Accounting Track • 3 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/hero-campus-2.webp" alt="B.Com Commerce">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">B.Com (ACCA, CMA, Logistics, Fintech)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">3 Years Full-Time</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">PUC / +2 Pass</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹2,25,000 – ₹2,55,000</span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Career-focused commerce degrees integrated with international credentials: ACCA (UK), US-CMA, Supply Chain Logistics, Digital Transformation, and E-Commerce.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Program Stream</th><th>1st Yr</th><th>2nd-3rd Yr</th><th>Total</th></tr>
+                <tr><td>B.Com (General)</td><td>₹1,00,000</td><td>₹55,000/yr</td><td>₹2,25,000</td></tr>
+                <tr><td>B.Com + ACCA (UK)</td><td>₹1,30,000</td><td>₹55,000/yr</td><td>₹2,55,000</td></tr>
+                <tr><td>B.Com + CMA</td><td>₹1,30,000</td><td>₹55,000/yr</td><td>₹2,55,000</td></tr>
+                <tr><td>B.Com + Logistics &amp; SCM</td><td>₹1,30,000</td><td>₹55,000/yr</td><td>₹2,55,000</td></tr>
+                <tr><td>B.Com + Digital Mktg / E-Com</td><td>₹1,30,000</td><td>₹55,000/yr</td><td>₹2,55,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Admission Fee: ₹15,000 across all B.Com streams.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Pre-University College (PUC) -->
+        <div class="program-card" data-category="puc">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">Karnataka PU Board • 2 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/puc.webp" alt="Pre University College">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">PUC Science (NEET / IIT-JEE / KCET)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">2 Years Full-Time</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">10th Standard / SSLC Pass</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹1,20,000 – ₹3,10,000</span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Rigorous Karnataka Pre-University Science curriculum (PCMB / PCMC) combined with integrated daily coaching for medical (NEET) and engineering (IIT-JEE / KCET) entrance tests.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Batch / Stream</th><th>1st Yr</th><th>2nd Yr</th><th>Total</th></tr>
+                <tr><td>PU Science (PCMC &amp; PCMB)</td><td>₹60,000</td><td>₹50,000</td><td>₹1,20,000</td></tr>
+                <tr><td>PU + K-CET Integrated</td><td>₹1,00,000</td><td>₹1,00,000</td><td>₹2,10,000</td></tr>
+                <tr><td>PU + NEET Integrated (PCMB)</td><td>₹1,50,000</td><td>₹1,50,000</td><td>₹3,10,000</td></tr>
+                <tr><td>PU + IIT-JEE Integrated (PCMC)</td><td>₹1,50,000</td><td>₹1,50,000</td><td>₹3,10,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Admission Fee: ₹10,000 across all PU College streams.</div>
             </div>
           </div>
         </div>
@@ -1430,11 +1836,46 @@
             <label class="form-label">Select Nursing Program *</label>
             <select name="course" class="form-control" required>
               <option value="">-- Choose Program --</option>
-              <option value="B.Sc. Nursing (Basic 4 Years)">B.Sc. Nursing (4 Years)</option>
-              <option value="Post Basic B.Sc. Nursing (2 Years)">Post Basic B.Sc. Nursing (2 Years)</option>
-              <option value="M.Sc. Nursing (Medical Surgical)">M.Sc. Nursing (Medical-Surgical)</option>
-              <option value="M.Sc. Nursing (OBG / Paediatrics)">M.Sc. Nursing (OBG / Paediatrics)</option>
-              <option value="General Nursing & Midwifery (GNM)">GNM Diploma (3 Years)</option>
+              <optgroup label="Nursing Programs">
+                <option value="B.Sc. Nursing (Basic 4 Years)">B.Sc. Nursing (4 Years)</option>
+                <option value="General Nursing &amp; Midwifery (GNM)">GNM Diploma (3 Years)</option>
+                <option value="Post Basic B.Sc. Nursing (2 Years)">Post Basic B.Sc. Nursing (2 Years)</option>
+                <option value="M.Sc. Nursing (Medical Surgical)">M.Sc. Nursing (Medical-Surgical)</option>
+                <option value="M.Sc. Nursing (OBG / Maternity)">M.Sc. Nursing (OBG / Maternity)</option>
+                <option value="M.Sc. Nursing (Paediatric / Child Health)">M.Sc. Nursing (Paediatric)</option>
+                <option value="M.Sc. Nursing (Psychiatric Nursing)">M.Sc. Nursing (Psychiatric)</option>
+                <option value="M.Sc. Nursing (Community Health)">M.Sc. Nursing (Community Health)</option>
+              </optgroup>
+              <optgroup label="Pharmacy Programs">
+                <option value="B.Pharm (Bachelor of Pharmacy 4 Years)">B.Pharm (4 Years)</option>
+                <option value="B.Pharm Lateral Entry (3 Years)">B.Pharm Lateral Entry (3 Years)</option>
+                <option value="D.Pharm (Diploma in Pharmacy 2 Years)">D.Pharm (2 Years)</option>
+              </optgroup>
+              <optgroup label="Paramedical Diplomas">
+                <option value="DMLT (Medical Laboratory Technology)">DMLT (Medical Lab Technology)</option>
+                <option value="DDT (Dialysis Technology)">DDT (Dialysis Technology)</option>
+                <option value="DMIT (Medical Imaging Technology)">DMIT (Medical Imaging Technology)</option>
+                <option value="DHI (Health Inspector)">DHI (Health Inspector)</option>
+                <option value="DOT &amp; AT (Operation Theatre &amp; Anaesthesia)">DOT &amp; AT (Operation Theatre &amp; Anaesthesia)</option>
+              </optgroup>
+              <optgroup label="Engineering &amp; Technology">
+                <option value="B.Tech Computer Science Engineering">B.Tech - Computer Science (CSE)</option>
+                <option value="B.Tech CSE (AI &amp; Machine Learning)">B.Tech - CSE (AI &amp; ML)</option>
+                <option value="B.Tech CSE (AI &amp; Data Science)">B.Tech - CSE (AI &amp; DS)</option>
+                <option value="B.Tech Electronics &amp; Communication">B.Tech - Electronics &amp; Communication (ECE)</option>
+                <option value="B.Tech Information Science Engineering">B.Tech - Information Science (ISE)</option>
+              </optgroup>
+              <optgroup label="Management, IT &amp; Commerce">
+                <option value="BBA (General &amp; Aviation Management)">BBA (Aviation, Digital, Logistics)</option>
+                <option value="BCA (AI, Cyber Security, Cloud, Data)">BCA (AI, Cyber Security, Cloud, Data)</option>
+                <option value="B.Com (ACCA, CMA, Logistics, Fintech)">B.Com (ACCA, CMA, Logistics, Fintech)</option>
+              </optgroup>
+              <optgroup label="Pre-University College (PUC)">
+                <option value="PU Science (PCMB / PCMC Regular)">PU Science (PCMB / PCMC)</option>
+                <option value="PU + K-CET Integrated">PU + K-CET Integrated</option>
+                <option value="PU + NEET Integrated">PU + NEET Integrated</option>
+                <option value="PU + IIT-JEE Integrated">PU + IIT-JEE Integrated</option>
+              </optgroup>
             </select>
           </div>
         </div>
@@ -1505,15 +1946,369 @@
           <label class="form-label">Program of Interest</label>
           <select name="cb_program" class="form-control">
             <option value="B.Sc. Nursing">B.Sc. Nursing (Basic 4 Years)</option>
+            <option value="GNM Diploma">GNM Diploma (3 Years)</option>
             <option value="P.B.B.Sc. Nursing">Post Basic B.Sc. Nursing</option>
-            <option value="M.Sc. Nursing">M.Sc. Nursing</option>
-            <option value="GNM">GNM Diploma</option>
+            <option value="M.Sc. Nursing">M.Sc. Nursing (All Specialties)</option>
+            <option value="B.Pharm / D.Pharm">Pharmacy (B.Pharm / D.Pharm)</option>
+            <option value="Paramedical Sciences">Paramedical (DMLT, DDT, DMIT, DOT)</option>
+            <option value="BE / B.Tech Engineering">BE / B.Tech Engineering (CSE, AI/ML)</option>
+            <option value="Management & IT">BBA / BCA / B.Com</option>
+            <option value="PUC Science">PUC Science (NEET / JEE / KCET)</option>
           </select>
         </div>
         <button type="submit" class="btn-primary-apply" style="width:100%; justify-content:center;">
           Request Call Back
         </button>
       </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: MASTER OFFICIAL FEE SCHEDULE & ADMISSION BROCHURE
+       ========================================================================== -->
+  <div class="modal-backdrop" id="feeScheduleModal">
+    <div class="modal-content-card fee-modal-content">
+      <button class="btn-close-modal" onclick="closeModal('feeScheduleModal')"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="fee-modal-header">
+        <span class="badge-pulse"><i class="fa-solid fa-file-invoice-dollar"></i> Session 2027-2028</span>
+        <h3 style="font-size:1.75rem; color:var(--primary-navy); margin-top:0.4rem;">Official Institutional Fee Structure</h3>
+        <p style="font-size:0.875rem; color:var(--text-muted); max-width:680px; margin:0.4rem auto 0 auto;">
+          Comprehensive transparent annual fees for Nursing, Pharmacy, Paramedical, Engineering, Management, and Pre-University programs.
+        </p>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="fee-tabs-nav">
+        <button class="fee-tab-btn active" onclick="switchFeeTab('nursing', this)">
+          <i class="fa-solid fa-user-nurse"></i> Nursing &amp; M.Sc
+        </button>
+        <button class="fee-tab-btn" onclick="switchFeeTab('pharmacy', this)">
+          <i class="fa-solid fa-capsules"></i> Pharmacy &amp; Paramedical
+        </button>
+        <button class="fee-tab-btn" onclick="switchFeeTab('management', this)">
+          <i class="fa-solid fa-briefcase"></i> Management &amp; IT
+        </button>
+        <button class="fee-tab-btn" onclick="switchFeeTab('engineering', this)">
+          <i class="fa-solid fa-laptop-code"></i> Engineering (B.Tech)
+        </button>
+        <button class="fee-tab-btn" onclick="switchFeeTab('puc', this)">
+          <i class="fa-solid fa-graduation-cap"></i> PU College (PUC)
+        </button>
+      </div>
+
+      <!-- Pane 1: Nursing & M.Sc Nursing -->
+      <div class="fee-tab-pane active" id="fee-tab-nursing">
+        <h4 style="font-size:1.2rem; color:#e51d24; margin-bottom:0.75rem; font-weight:800; text-transform:uppercase;">Nursing Degree &amp; Diploma Courses</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr>
+                <th>Particulars</th>
+                <th>Admission Fees</th>
+                <th>1st Year</th>
+                <th>2nd Year</th>
+                <th>3rd Year</th>
+                <th>4th Year</th>
+                <th>Total Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="course-name-cell">GNM</td>
+                <td>20,000</td>
+                <td>1,95,000</td>
+                <td>90,000</td>
+                <td>90,000</td>
+                <td>N/A</td>
+                <td class="fee-total-cell">3,95,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">B.Sc Nursing</td>
+                <td>30,000</td>
+                <td>3,25,000</td>
+                <td>1,65,000</td>
+                <td>1,65,000</td>
+                <td>1,65,000</td>
+                <td class="fee-total-cell">8,50,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">P.B.B.Sc Nursing</td>
+                <td>25,000</td>
+                <td>1,55,000</td>
+                <td>70,000</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td class="fee-total-cell">2,50,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-note-banner">
+          <i class="fa-solid fa-utensils"></i> Note: GNM &amp; B.Sc. Nursing Including Food &amp; Accommodation.
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Duration &amp; Eligibility:</strong> GNM: 3 Years (+2/PUC) | B.Sc Nursing: 4 Years (+2/PUC with PCB &amp; 45% pass) | P.B.B.Sc: 2 Years (GNM pass).
+        </div>
+
+        <h4 style="font-size:1.2rem; color:#e51d24; margin:1.5rem 0 0.75rem; font-weight:800; text-transform:uppercase;">MSC NURSING</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr>
+                <th>Particulars</th>
+                <th>Admission Fees</th>
+                <th>1st Year</th>
+                <th>2nd Year</th>
+                <th>Total Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="course-name-cell">Medical Surgical Nursing</td>
+                <td>30,000</td>
+                <td>2,00,000</td>
+                <td>70,000</td>
+                <td class="fee-total-cell">3,00,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">Obstetrics and Gynaecology (OBG)</td>
+                <td>25,000</td>
+                <td>1,55,000</td>
+                <td>70,000</td>
+                <td class="fee-total-cell">2,50,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">Pediatric Nursing</td>
+                <td>25,000</td>
+                <td>1,45,000</td>
+                <td>70,000</td>
+                <td class="fee-total-cell">2,40,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">Psychiatric Nursing</td>
+                <td>25,000</td>
+                <td>1,35,000</td>
+                <td>70,000</td>
+                <td class="fee-total-cell">2,30,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">Community Health Nursing</td>
+                <td>25,000</td>
+                <td>1,25,000</td>
+                <td>70,000</td>
+                <td class="fee-total-cell">2,20,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Duration:</strong> 2 Years | <strong>Eligibility:</strong> B.Sc. Nursing Pass / P.B.B.Sc Nursing Pass.
+        </div>
+      </div>
+
+      <!-- Pane 2: Pharmacy & Paramedical -->
+      <div class="fee-tab-pane" id="fee-tab-pharmacy">
+        <h4 style="font-size:1.2rem; color:#e51d24; margin-bottom:0.75rem; font-weight:800; text-transform:uppercase;">PHARMACY</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr>
+                <th>Particulars</th>
+                <th>Admission Fees</th>
+                <th>1st Year</th>
+                <th>2nd Year</th>
+                <th>3rd Year</th>
+                <th>4th Year</th>
+                <th>Total Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="course-name-cell">D.Pharm</td>
+                <td>20,000</td>
+                <td>1,15,000</td>
+                <td>40,000</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td class="fee-total-cell">1,75,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">B.Pharm</td>
+                <td>25,000</td>
+                <td>2,60,000</td>
+                <td>1,30,000</td>
+                <td>1,30,000</td>
+                <td>1,30,000</td>
+                <td class="fee-total-cell">6,75,000</td>
+              </tr>
+              <tr>
+                <td class="course-name-cell">B.Pharm (Lateral Entry)</td>
+                <td>20,000</td>
+                <td>2,25,000</td>
+                <td>1,25,000</td>
+                <td>1,25,000</td>
+                <td>N/A</td>
+                <td class="fee-total-cell">4,95,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-note-banner">
+          <i class="fa-solid fa-utensils"></i> Note: B.Pharm &amp; B.Pharm (Lateral Entry) Including Food &amp; Accommodation.
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Duration &amp; Eligibility:</strong> D.Pharm: 2 Years (10+2 with 40% PCB/PCM) | B.Pharm: 4 Years (10+2 with 45% PCB/PCM) | B.Pharm Lateral: 3 Years (Pass in D.Pharm from PCI recognized institutions).
+        </div>
+
+        <h4 style="font-size:1.2rem; color:#e51d24; margin:1.5rem 0 0.75rem; font-weight:800; text-transform:uppercase;">PARAMEDICAL</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr>
+                <th>Particulars</th>
+                <th>Admission Fees</th>
+                <th>1st Year</th>
+                <th>2nd Year</th>
+                <th>3rd Year</th>
+                <th>Total Fees</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="course-name-cell">DMLT (Medical Lab Technology)</td><td>15,000</td><td>1,15,000</td><td>50,000</td><td>50,000</td><td class="fee-total-cell">2,30,000</td></tr>
+              <tr><td class="course-name-cell">DDT (Dialysis Technology)</td><td>15,000</td><td>1,15,000</td><td>50,000</td><td>50,000</td><td class="fee-total-cell">2,30,000</td></tr>
+              <tr><td class="course-name-cell">DMIT (Medical Imaging Technology)</td><td>15,000</td><td>1,15,000</td><td>50,000</td><td>50,000</td><td class="fee-total-cell">2,30,000</td></tr>
+              <tr><td class="course-name-cell">DHI (Health Inspector)</td><td>15,000</td><td>1,15,000</td><td>50,000</td><td>50,000</td><td class="fee-total-cell">2,30,000</td></tr>
+              <tr><td class="course-name-cell">DOT &amp; AT (Operation Theatre &amp; Anaesthesia)</td><td>15,000</td><td>1,15,000</td><td>50,000</td><td>50,000</td><td class="fee-total-cell">2,30,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Eligibility:</strong> 10th &amp; H.S. (Arts &amp; Commerce): 3 Years, H.S. (Science): 2 Years.
+        </div>
+      </div>
+
+      <!-- Pane 3: Management, IT & Commerce -->
+      <div class="fee-tab-pane" id="fee-tab-management">
+        <h4 style="font-size:1.2rem; color:#e51d24; margin-bottom:0.75rem; font-weight:800; text-transform:uppercase;">BBA PROGRAMS</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr><th>Particulars</th><th>Admission Fees</th><th>1st Year</th><th>2nd Year</th><th>3rd Year</th><th>Total Fees</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="course-name-cell">BBA (General)</td><td>15,000</td><td>1,00,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,25,000</td></tr>
+              <tr><td class="course-name-cell">BBA + Aviation Management</td><td>15,000</td><td>1,20,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,45,000</td></tr>
+              <tr><td class="course-name-cell">BBA + Digital Marketing</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BBA + Data Analysis</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BBA + Ecommerce</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BBA + Logistics</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="font-size:1.2rem; color:#e51d24; margin:1.5rem 0 0.75rem; font-weight:800; text-transform:uppercase;">BCA PROGRAMS</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr><th>Particulars</th><th>Admission Fees</th><th>1st Year</th><th>2nd Year</th><th>3rd Year</th><th>Total Fees</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="course-name-cell">BCA (General)</td><td>15,000</td><td>1,00,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,25,000</td></tr>
+              <tr><td class="course-name-cell">BCA + Artificial Intelligence (AI)</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BCA + Data Analytics</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BCA + Ethical Hacking</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BCA + Cyber Security</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BCA + Digital Marketing</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BCA + Cloud Computing</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+              <tr><td class="course-name-cell">BCA + Python</td><td>15,000</td><td>1,35,000</td><td>70,000</td><td>70,000</td><td class="fee-total-cell">2,90,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="font-size:1.2rem; color:#e51d24; margin:1.5rem 0 0.75rem; font-weight:800; text-transform:uppercase;">B.COM PROGRAMS</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr><th>Particulars</th><th>Admission Fees</th><th>1st Year</th><th>2nd Year</th><th>3rd Year</th><th>Total Fees</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="course-name-cell">B.COM (General)</td><td>15,000</td><td>1,00,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,25,000</td></tr>
+              <tr><td class="course-name-cell">B.COM + Logistic &amp; Supply Chain</td><td>15,000</td><td>1,30,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,55,000</td></tr>
+              <tr><td class="course-name-cell">B.COM + ACCA</td><td>15,000</td><td>1,30,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,55,000</td></tr>
+              <tr><td class="course-name-cell">B.COM + CMA</td><td>15,000</td><td>1,30,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,55,000</td></tr>
+              <tr><td class="course-name-cell">B.COM + Digital Marketing</td><td>15,000</td><td>1,30,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,55,000</td></tr>
+              <tr><td class="course-name-cell">B.COM + Digital Transformation</td><td>15,000</td><td>1,30,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,55,000</td></tr>
+              <tr><td class="course-name-cell">B.COM + Ecommerce</td><td>15,000</td><td>1,30,000</td><td>55,000</td><td>55,000</td><td class="fee-total-cell">2,55,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Duration:</strong> 3 Years | <strong>Eligibility:</strong> PUC / +2 Pass.
+        </div>
+      </div>
+
+      <!-- Pane 4: Engineering -->
+      <div class="fee-tab-pane" id="fee-tab-engineering">
+        <h4 style="font-size:1.2rem; color:#0a2540; margin-bottom:0.75rem; font-weight:800; text-transform:uppercase;">BE / B.TECH ENGINEERING (4-YEAR DEGREE)</h4>
+        <p style="font-size:0.85rem; color:#475569; margin-bottom:1rem;">
+          4-year undergraduate degree focused on analytical and technical engineering disciplines through balanced theory, lab practicals, and industry-oriented training. Admission fees for all: <strong>₹25,000</strong>.
+        </p>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table theme-eng">
+            <thead>
+              <tr>
+                <th>Courses</th>
+                <th>1st Year</th>
+                <th>2nd Year</th>
+                <th>3rd Year</th>
+                <th>4th Year</th>
+                <th>Total Fee (Incl. Adm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="course-name-cell">Computer Science Engineering</td><td>2,25,000</td><td>1,75,000</td><td>1,75,000</td><td>1,75,000</td><td class="fee-total-cell">7,75,000</td></tr>
+              <tr><td class="course-name-cell">Computer Science Engineering (AI&amp;ML)</td><td>2,45,000</td><td>1,75,000</td><td>1,75,000</td><td>1,75,000</td><td class="fee-total-cell">7,95,000</td></tr>
+              <tr><td class="course-name-cell">Computer Science Engineering (AI&amp;DS)</td><td>2,35,000</td><td>1,75,000</td><td>1,75,000</td><td>1,75,000</td><td class="fee-total-cell">7,85,000</td></tr>
+              <tr><td class="course-name-cell">Electronics &amp; Communications Engineering</td><td>2,25,000</td><td>1,25,000</td><td>1,25,000</td><td>1,25,000</td><td class="fee-total-cell">6,25,000</td></tr>
+              <tr><td class="course-name-cell">Information Science Engineering</td><td>2,15,000</td><td>1,25,000</td><td>1,25,000</td><td>1,25,000</td><td class="fee-total-cell">6,15,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Eligibility:</strong> 10+2 with Physics, Mathematics &amp; Chemistry from a recognized board. | <strong>Duration:</strong> 4 Years (8 Semesters).
+        </div>
+      </div>
+
+      <!-- Pane 5: Pre-University College (PUC) -->
+      <div class="fee-tab-pane" id="fee-tab-puc">
+        <h4 style="font-size:1.2rem; color:#e51d24; margin-bottom:0.75rem; font-weight:800; text-transform:uppercase;">PRE-UNIVERSITY COLLEGE (PUC)</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr><th>Particulars</th><th>Admission Fees</th><th>1st Year</th><th>2nd Year</th><th>Total Fees</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="course-name-cell">PU SCIENCE (PCMC &amp; PCMB)</td><td>10,000</td><td>60,000</td><td>50,000</td><td class="fee-total-cell">1,20,000</td></tr>
+              <tr><td class="course-name-cell">PU + K-CET (PCMC &amp; PCMB)</td><td>10,000</td><td>1,00,000</td><td>1,00,000</td><td class="fee-total-cell">2,10,000</td></tr>
+              <tr><td class="course-name-cell">PU + IIT (PCMC)</td><td>10,000</td><td>1,50,000</td><td>1,50,000</td><td class="fee-total-cell">3,10,000</td></tr>
+              <tr><td class="course-name-cell">PU + NEET (PCMB)</td><td>10,000</td><td>1,50,000</td><td>1,50,000</td><td class="fee-total-cell">3,10,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Duration:</strong> 2 Years | <strong>Eligibility:</strong> 10th Pass / SSLC.
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid #e2e8f0; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <button class="btn-primary-apply" data-open-modal="admissionModal" onclick="closeModal('feeScheduleModal')">
+          <i class="fa-solid fa-paper-plane"></i> Apply Online for Admission
+        </button>
+        <button class="btn-secondary" onclick="closeModal('feeScheduleModal')">
+          Close Brochure
+        </button>
+      </div>
     </div>
   </div>
 

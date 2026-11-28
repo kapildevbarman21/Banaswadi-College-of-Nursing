@@ -263,6 +263,40 @@ function initProgramFilters() {
 }
 
 /* ==========================================================================
+   4A-1. INTERACTIVE FEE BREAKDOWN DRAWERS & MODAL TAB NAVIGATION
+   ========================================================================== */
+window.toggleFeeDrawer = function(button) {
+  const card = button.closest('.program-card');
+  if (!card) return;
+  const drawer = card.querySelector('.program-fee-drawer');
+  if (!drawer) return;
+
+  const isOpen = drawer.classList.contains('open');
+  if (isOpen) {
+    drawer.classList.remove('open');
+    button.classList.remove('active');
+  } else {
+    drawer.classList.add('open');
+    button.classList.add('active');
+  }
+};
+
+window.switchFeeTab = function(tabName, btnElement) {
+  const modal = document.getElementById('feeScheduleModal');
+  if (!modal) return;
+
+  const tabBtns = modal.querySelectorAll('.fee-tab-btn');
+  const panes = modal.querySelectorAll('.fee-tab-pane');
+
+  tabBtns.forEach(btn => btn.classList.remove('active'));
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  if (btnElement) btnElement.classList.add('active');
+  const targetPane = document.getElementById(`fee-tab-${tabName}`);
+  if (targetPane) targetPane.classList.add('active');
+};
+
+/* ==========================================================================
    4B. PROGRAMS 3D TILT & SPECULAR GLARE MOTION ENGINE
    ========================================================================== */
 function initProgram3DTilt() {

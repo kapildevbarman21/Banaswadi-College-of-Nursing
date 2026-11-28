@@ -1469,15 +1469,48 @@ button, input, select, textarea {
    ACADEMIC OFFERINGS (3D Interactive Tilt & Specular Glare Motion)
    ========================================================================== */
 
+.programs-filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2.75rem;
+  position: relative;
+  z-index: 2;
+}
+
 .programs-filter-tabs {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   flex-wrap: wrap;
-  margin-bottom: 2.75rem;
   position: relative;
   z-index: 2;
+}
+
+.btn-schedule-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(243, 198, 76, 0.12);
+  color: #855d00;
+  border: 1px solid rgba(243, 198, 76, 0.45);
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(243, 198, 76, 0.15);
+}
+
+.btn-schedule-trigger:hover {
+  background: #f3c64c;
+  color: #071a36;
+  border-color: #f3c64c;
+  box-shadow: 0 4px 14px rgba(243, 198, 76, 0.35);
+  transform: translateY(-2px);
 }
 
 .filter-btn {
@@ -1727,6 +1760,254 @@ button, input, select, textarea {
   color: var(--primary-navy);
   background: rgba(229, 183, 59, 0.08);
   transform: translateZ(12px);
+}
+
+/* Fee Highlight in Meta List */
+.meta-row.meta-fee-row {
+  margin-top: 0.35rem;
+  padding-top: 0.45rem;
+  border-top: 1px dashed rgba(13, 50, 104, 0.15);
+}
+
+.fee-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #047857 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  text-align: right;
+}
+
+.fee-badge small {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #065f46;
+  display: block;
+}
+
+/* Fee Breakdown Button */
+.btn-card-fee {
+  background: rgba(10, 34, 64, 0.05);
+  border: 1px solid rgba(10, 34, 64, 0.15);
+  color: var(--primary-navy);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transform: translateZ(8px);
+}
+
+.btn-card-fee:hover,
+.btn-card-fee.active {
+  background: var(--primary-navy);
+  color: #ffffff;
+  border-color: var(--primary-navy);
+}
+
+.btn-card-fee .fee-icon-arrow {
+  font-size: 0.72rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-card-fee.active .fee-icon-arrow {
+  transform: rotate(180deg);
+}
+
+/* Expandable Fee Drawer inside Card */
+.program-fee-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+  background: #f8fafc;
+  border-radius: 10px;
+  margin-top: 0;
+  transform: translateZ(10px);
+}
+
+.program-fee-drawer.open {
+  max-height: 520px;
+  opacity: 1;
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(10, 34, 64, 0.1);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.mini-fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.775rem;
+}
+
+.mini-fee-table th {
+  background: rgba(10, 34, 64, 0.06);
+  color: var(--primary-navy);
+  font-weight: 700;
+  padding: 0.35rem 0.45rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(10, 34, 64, 0.12);
+}
+
+.mini-fee-table td {
+  padding: 0.35rem 0.45rem;
+  color: #334155;
+  border-bottom: 1px solid rgba(10, 34, 64, 0.06);
+}
+
+.mini-fee-table tr:last-child td {
+  border-bottom: none;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.mini-fee-note {
+  font-size: 0.72rem;
+  color: #d97706;
+  font-weight: 600;
+  margin-top: 0.45rem;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Master Fee Schedule Modal */
+.fee-modal-content {
+  max-width: 980px !important;
+  width: 95% !important;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 2.25rem !important;
+}
+
+.fee-modal-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.fee-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fee-tab-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: var(--primary-navy);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fee-tab-btn:hover {
+  border-color: var(--primary-navy);
+  background: #f8fafc;
+}
+
+.fee-tab-btn.active {
+  background: #e51d24; /* Red banner matching the brochure images */
+  color: #ffffff;
+  border-color: #e51d24;
+  box-shadow: 0 4px 12px rgba(229, 29, 36, 0.25);
+}
+
+.fee-tab-pane {
+  display: none;
+}
+
+.fee-tab-pane.active {
+  display: block;
+}
+
+.brochure-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.brochure-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.brochure-table th {
+  background: #e51d24; /* Red header matching the user's uploaded images */
+  color: #ffffff;
+  padding: 0.75rem 0.85rem;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.brochure-table.theme-eng th {
+  background: #0a2540; /* Blue header for Engineering matching image 4 */
+}
+
+.brochure-table td {
+  padding: 0.75rem 0.85rem;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+.brochure-table tr:nth-child(even) td {
+  background: #fff5f5;
+}
+
+.brochure-table.theme-eng tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+.brochure-table td.course-name-cell {
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.brochure-table td.fee-total-cell {
+  font-weight: 800;
+  color: #047857;
+}
+
+.brochure-note-banner {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.8rem;
+  color: #be123c;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.brochure-eligibility-banner {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.8rem;
+  color: #15803d;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
 }
 
 @media (prefers-reduced-motion: reduce) {
