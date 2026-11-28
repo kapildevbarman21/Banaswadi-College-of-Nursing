@@ -108,10 +108,109 @@ function initHeroCarousel() {
 }
 
 /* ==========================================================================
-   3. INSTITUTIONAL METRICS (Static, Clean & Motion-Free)
+   3. ANIMATED NUMBER COUNTERS & 3D INTERACTIVE CARDS
    ========================================================================== */
 function initStatsCounters() {
-  // Motion removed per request: instant, solid, attractive display with zero lag.
+  const cards = document.querySelectorAll('.stat-card');
+  const counters = document.querySelectorAll('.stat-number');
+  const statsSection = document.querySelector('.stats-counter-section');
+  if (!counters.length) return;
+
+  let hasAnimated = false;
+
+  function startAnimation() {
+    if (hasAnimated) return;
+    hasAnimated = true;
+
+    // 1. Staggered reveal of stats cards
+    cards.forEach((card, idx) => {
+      setTimeout(() => {
+        card.classList.add('stat-revealed');
+      }, idx * 120);
+    });
+
+    // 2. High-precision eased counter animation
+    counters.forEach((counter, idx) => {
+      const target = parseFloat(counter.getAttribute('data-target') || '0');
+      const isDecimal = counter.getAttribute('data-decimal') === 'true';
+      const duration = 2000;
+      const startTime = performance.now() + (idx * 80);
+
+      function updateCounter(currentTime) {
+        if (currentTime < startTime) {
+          requestAnimationFrame(updateCounter);
+          return;
+        }
+
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Exponential ease out for smooth deceleration
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        
+        const currentVal = isDecimal 
+          ? (easeProgress * target).toFixed(1)
+          : Math.floor(easeProgress * target);
+
+        counter.textContent = currentVal;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.textContent = isDecimal ? target.toFixed(1) : target;
+          // Subtle pulse celebration on complete
+          const suffix = counter.nextElementSibling;
+          if (suffix && suffix.classList.contains('stat-suffix')) {
+            suffix.style.transform = 'scale(1.22) rotate(5deg)';
+            setTimeout(() => { suffix.style.transform = ''; }, 350);
+          }
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    });
+  }
+
+  // Observe scroll into view
+  if ('IntersectionObserver' in window && statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startAnimation();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    observer.observe(statsSection);
+  } else {
+    startAnimation();
+  }
+
+  // 3. Desktop 3D perspective tilt & specular glare
+  if (window.matchMedia('(pointer: fine)').matches) {
+    cards.forEach(card => {
+      const glare = card.querySelector('.stat-card-glare');
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale3d(1.02, 1.02, 1.02)`;
+        if (glare) {
+          glare.style.setProperty('--mouse-x', `${(x / rect.width * 100).toFixed(1)}%`);
+          glare.style.setProperty('--mouse-y', `${(y / rect.height * 100).toFixed(1)}%`);
+        }
+      });
+
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
 }
 
 /* ==========================================================================
