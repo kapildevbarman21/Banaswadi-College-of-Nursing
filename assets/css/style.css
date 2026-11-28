@@ -3025,9 +3025,9 @@ html, body {
   }
 
   .brand-title {
-    font-size: 0.88rem !important;
+    font-size: 0.81rem !important;
     line-height: 1.15 !important;
-    letter-spacing: -0.2px !important;
+    letter-spacing: -0.25px !important;
     white-space: nowrap !important;
   }
 
@@ -3375,10 +3375,10 @@ html, body {
 /* Ultra-Compact Phone Screens (< 380px: iPhone SE, Galaxy Fold) */
 @media (max-width: 380px) {
   .brand-title {
-    font-size: 0.8rem !important;
+    font-size: 0.72rem !important;
   }
   .brand-emblem-img {
-    height: 34px !important;
+    height: 32px !important;
   }
   .hero-title {
     font-size: 1.6rem !important;
