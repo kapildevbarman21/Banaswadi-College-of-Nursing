@@ -1854,8 +1854,290 @@ button, input, select, textarea {
    ========================================================================== */
 
 /* ==========================================================================
-   LEADERSHIP DESK (Chairman & Founder's Message - Full Viewport Responsive)
+   LEADERSHIP DESK (Kristu Jayanti Style Dark Studio Showcase)
    ========================================================================== */
+
+.leadership-section.vc-showcase-section {
+  position: relative;
+  width: 100%;
+  background: #05070a !important;
+  color: #ffffff;
+  overflow: hidden;
+  padding: 0 !important;
+  min-height: auto !important;
+  box-sizing: border-box;
+}
+
+.leadership-section.vc-showcase-section::before,
+.leadership-section.vc-showcase-section::after {
+  display: none !important;
+}
+
+.vc-showcase-wrapper {
+  position: relative;
+  width: 100%;
+  background: #05070a;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .vc-showcase-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 560px;
+    max-height: 720px;
+  }
+}
+
+/* Left: Content Block */
+.vc-showcase-content {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  padding: 3.5rem 1.5rem 2.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .vc-showcase-content {
+    padding: 4rem 2.5rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vc-showcase-content {
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    padding: 0 0 0 5%;
+    max-width: 58%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .vc-showcase-content {
+    padding-left: 7%;
+    max-width: 55%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .vc-showcase-content {
+    padding-left: 9%;
+    max-width: 52%;
+  }
+}
+
+.vc-showcase-inner {
+  width: 100%;
+  max-width: 680px;
+  text-align: left;
+}
+
+.vc-showcase-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #e5b73b; /* Institutional metallic gold */
+  margin-bottom: 0.85rem;
+}
+
+.vc-showcase-heading {
+  font-family: 'Gloock', 'Playfair Display', 'Cinzel', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.35rem;
+}
+
+@media (min-width: 480px) {
+  .vc-showcase-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .vc-showcase-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .vc-showcase-heading {
+    font-size: 2.85rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.vc-showcase-para {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 1.15rem;
+  text-align: justify;
+}
+
+@media (min-width: 768px) {
+  .vc-showcase-para {
+    font-size: 0.9375rem;
+    line-height: 1.85;
+  }
+}
+
+@media (min-width: 1280px) {
+  .vc-showcase-para {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.vc-showcase-author {
+  padding-top: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.vc-author-name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.2rem;
+}
+
+.vc-author-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.vc-showcase-action {
+  padding-top: 0.5rem;
+}
+
+.vc-read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.vc-read-more-btn span.vc-arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+  font-size: 1.15rem;
+}
+
+.vc-read-more-btn:hover {
+  color: #ffffff;
+}
+
+.vc-read-more-btn:hover span.vc-arrow {
+  transform: translateX(6px);
+  color: #e5b73b;
+}
+
+/* Gradient overlay across image to blend smoothly into text */
+.vc-gradient-overlay {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .vc-gradient-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 64%;
+    background: linear-gradient(to right, #05070a 0%, #05070a 45%, rgba(5, 7, 10, 0.95) 70%, rgba(5, 7, 10, 0.7) 85%, transparent 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .vc-gradient-overlay {
+    width: 60%;
+  }
+}
+
+.vc-image-wrapper {
+  width: 100%;
+  background: #05070a;
+  overflow: hidden;
+}
+
+.vc-showcase-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .vc-image-wrapper {
+    height: 100%;
+    min-height: 560px;
+    max-height: 720px;
+  }
+  .vc-showcase-img {
+    height: 100%;
+    min-height: 560px;
+    max-height: 720px;
+    object-fit: cover;
+    object-position: right center;
+  }
+}
+
+@media (max-width: 1023px) {
+  .vc-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: #05070a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .vc-showcase-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+  .vc-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, #05070a 0%, transparent 100%);
+    z-index: 5;
+    pointer-events: none;
+  }
+}
 
 .leadership-section {
   position: relative;
