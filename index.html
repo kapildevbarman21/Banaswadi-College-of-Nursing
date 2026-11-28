@@ -439,6 +439,7 @@
           <button class="filter-btn" data-filter="pharmacy">Pharmacy</button>
           <button class="filter-btn" data-filter="paramedical">Paramedical</button>
           <button class="filter-btn" data-filter="engineering">Engineering</button>
+          <button class="filter-btn" data-filter="mba">MBA Programs</button>
           <button class="filter-btn" data-filter="management">Management &amp; IT</button>
           <button class="filter-btn" data-filter="puc">PU College</button>
         </div>
@@ -862,7 +863,97 @@
           </div>
         </div>
 
-        <!-- 10. BBA Professional Management -->
+        <!-- 10. Master of Business Administration (MBA Dual Specialization) -->
+        <div class="program-card" data-category="mba">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">AICTE Approved • 2 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/mba-course.webp" alt="Master of Business Administration MBA">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">Master of Business Administration (MBA)</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">2 Years (4 Semesters)</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">Graduation (min 50%) + PGCET/KMAT</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹3,95,000 – ₹4,35,000</span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Premier 2-year postgraduate management program offering Dual Specializations in Finance, Human Resources, Marketing, Business Analytics, and Logistics &amp; Supply Chain Management.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>MBA Specialization</th><th>1st Yr</th><th>2nd Yr</th><th>Total</th></tr>
+                <tr><td>Finance / HR / Marketing (Dual)</td><td>₹2,10,000</td><td>₹1,60,000</td><td>₹3,95,000</td></tr>
+                <tr><td>Business Analytics &amp; Data Science</td><td>₹2,35,000</td><td>₹1,75,000</td><td>₹4,35,000</td></tr>
+                <tr><td>Logistics &amp; Supply Chain Mgmt</td><td>₹2,25,000</td><td>₹1,70,000</td><td>₹4,20,000</td></tr>
+                <tr><td>Aviation &amp; Airport Management</td><td>₹2,25,000</td><td>₹1,70,000</td><td>₹4,20,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-info"></i> Admission Fee: ₹25,000 included. Includes Corporate Mentorship &amp; Case Studies.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. MBA in Healthcare & Hospital Administration -->
+        <div class="program-card" data-category="mba">
+          <div class="program-card-glare"></div>
+          <span class="program-card-badge">Hospital Industry Track • 2 Years</span>
+          <div class="program-img-wrap">
+            <img src="assets/images/campus-building.jpg" alt="MBA Hospital Administration">
+          </div>
+          <div class="program-body">
+            <h3 class="program-title">MBA in Healthcare &amp; Hospital Administration</h3>
+            <div class="program-meta-list">
+              <div class="meta-row">
+                <span class="label">Duration:</span>
+                <span class="val">2 Years Full-Time</span>
+              </div>
+              <div class="meta-row">
+                <span class="label">Eligibility:</span>
+                <span class="val">Any Bachelor's Degree (min 50%)</span>
+              </div>
+              <div class="meta-row meta-fee-row">
+                <span class="label"><i class="fa-solid fa-receipt"></i> Total Fee:</span>
+                <span class="val fee-badge">₹4,50,000 <small>Multi-Hospital Postings</small></span>
+              </div>
+            </div>
+            <p class="program-desc">
+              Tailored executive management program for hospital operations, NABH accreditation standards, health informatics, medical tourism, and clinical department administration across Bangalore's leading multi-specialty hospitals.
+            </p>
+            <div class="program-card-actions">
+              <button class="btn-card-apply" data-open-modal="admissionModal">Apply Now</button>
+              <button class="btn-card-fee" onclick="toggleFeeDrawer(this)">
+                <span>Fee Breakdown</span> <i class="fa-solid fa-chevron-down fee-icon-arrow"></i>
+              </button>
+            </div>
+            <div class="program-fee-drawer">
+              <table class="mini-fee-table">
+                <tr><th>Fee Component</th><th>Amount</th></tr>
+                <tr><td>Admission Fees</td><td>₹25,000</td></tr>
+                <tr><td>1st Year Tuition &amp; Postings</td><td>₹2,40,000</td></tr>
+                <tr><td>2nd Year Tuition &amp; Project</td><td>₹1,85,000</td></tr>
+                <tr><td>Total Program Fee</td><td>₹4,50,000</td></tr>
+              </table>
+              <div class="mini-fee-note"><i class="fa-solid fa-circle-check"></i> Direct residency postings at partner super-specialty hospital networks.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. BBA Professional Management -->
         <div class="program-card" data-category="management">
           <div class="program-card-glare"></div>
           <span class="program-card-badge">Bangalore University • 3 Years</span>
@@ -1865,6 +1956,12 @@
                 <option value="B.Tech Electronics &amp; Communication">B.Tech - Electronics &amp; Communication (ECE)</option>
                 <option value="B.Tech Information Science Engineering">B.Tech - Information Science (ISE)</option>
               </optgroup>
+              <optgroup label="MBA &amp; Postgraduate Management">
+                <option value="MBA (Dual: Finance / HR / Marketing)">MBA (Dual: Finance / HR / Marketing)</option>
+                <option value="MBA in Healthcare &amp; Hospital Administration">MBA in Healthcare &amp; Hospital Administration</option>
+                <option value="MBA in Business Analytics &amp; Data Science">MBA in Business Analytics &amp; Data Science</option>
+                <option value="MBA in Logistics &amp; Supply Chain">MBA in Logistics &amp; Supply Chain</option>
+              </optgroup>
               <optgroup label="Management, IT &amp; Commerce">
                 <option value="BBA (General &amp; Aviation Management)">BBA (Aviation, Digital, Logistics)</option>
                 <option value="BCA (AI, Cyber Security, Cloud, Data)">BCA (AI, Cyber Security, Cloud, Data)</option>
@@ -1952,6 +2049,7 @@
             <option value="B.Pharm / D.Pharm">Pharmacy (B.Pharm / D.Pharm)</option>
             <option value="Paramedical Sciences">Paramedical (DMLT, DDT, DMIT, DOT)</option>
             <option value="BE / B.Tech Engineering">BE / B.Tech Engineering (CSE, AI/ML)</option>
+            <option value="MBA Programs">MBA (Master of Business Administration)</option>
             <option value="Management & IT">BBA / BCA / B.Com</option>
             <option value="PUC Science">PUC Science (NEET / JEE / KCET)</option>
           </select>
@@ -1987,7 +2085,7 @@
           <i class="fa-solid fa-capsules"></i> Pharmacy &amp; Paramedical
         </button>
         <button class="fee-tab-btn" onclick="switchFeeTab('management', this)">
-          <i class="fa-solid fa-briefcase"></i> Management &amp; IT
+          <i class="fa-solid fa-briefcase"></i> MBA &amp; Management
         </button>
         <button class="fee-tab-btn" onclick="switchFeeTab('engineering', this)">
           <i class="fa-solid fa-laptop-code"></i> Engineering (B.Tech)
@@ -2190,7 +2288,26 @@
 
       <!-- Pane 3: Management, IT & Commerce -->
       <div class="fee-tab-pane" id="fee-tab-management">
-        <h4 style="font-size:1.2rem; color:#e51d24; margin-bottom:0.75rem; font-weight:800; text-transform:uppercase;">BBA PROGRAMS</h4>
+        <h4 style="font-size:1.2rem; color:#e51d24; margin-bottom:0.75rem; font-weight:800; text-transform:uppercase;">MBA PROGRAMS (MASTER OF BUSINESS ADMINISTRATION)</h4>
+        <div class="brochure-table-wrap">
+          <table class="brochure-table">
+            <thead>
+              <tr><th>Particulars</th><th>Admission Fees</th><th>1st Year</th><th>2nd Year</th><th>Total Fees</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="course-name-cell">MBA (Finance / HR / Marketing - Dual)</td><td>25,000</td><td>2,10,000</td><td>1,60,000</td><td class="fee-total-cell">3,95,000</td></tr>
+              <tr><td class="course-name-cell">MBA + Business Analytics &amp; Data Science</td><td>25,000</td><td>2,35,000</td><td>1,75,000</td><td class="fee-total-cell">4,35,000</td></tr>
+              <tr><td class="course-name-cell">MBA in Healthcare &amp; Hospital Administration</td><td>25,000</td><td>2,40,000</td><td>1,85,000</td><td class="fee-total-cell">4,50,000</td></tr>
+              <tr><td class="course-name-cell">MBA + Logistics &amp; Supply Chain Management</td><td>25,000</td><td>2,25,000</td><td>1,70,000</td><td class="fee-total-cell">4,20,000</td></tr>
+              <tr><td class="course-name-cell">MBA + Aviation &amp; Airport Management</td><td>25,000</td><td>2,25,000</td><td>1,70,000</td><td class="fee-total-cell">4,20,000</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="brochure-eligibility-banner">
+          <strong>Duration:</strong> 2 Years (4 Semesters) | <strong>Eligibility:</strong> Bachelor's Degree in any discipline with min 50% marks (45% for reserved) + KMAT / PGCET / MAT / CAT score.
+        </div>
+
+        <h4 style="font-size:1.2rem; color:#e51d24; margin:1.5rem 0 0.75rem; font-weight:800; text-transform:uppercase;">BBA PROGRAMS</h4>
         <div class="brochure-table-wrap">
           <table class="brochure-table">
             <thead>

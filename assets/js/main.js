@@ -234,7 +234,7 @@ function initProgramFilters() {
 
       cards.forEach(card => {
         const category = card.getAttribute('data-category');
-        const match = (filter === 'all' || category === filter);
+        const match = (filter === 'all' || category === filter || (filter === 'management' && category === 'mba'));
 
         if (match) {
           card.style.display = 'flex';
