@@ -1444,6 +1444,19 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
+/* Programs Section Subtitle - Prestigious Academic Serif Typography */
+.programs-subtitle {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-size: 1.32rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.6;
+  max-width: 860px;
+  margin: 0 auto;
+  letter-spacing: 0.15px;
+}
+
 .programs-filter-tabs {
   display: flex;
   align-items: center;
@@ -3871,6 +3884,11 @@ html, body {
 
   .section-subtitle {
     font-size: 0.875rem !important;
+  }
+
+  .programs-subtitle {
+    font-size: 1.12rem !important;
+    line-height: 1.52 !important;
   }
 
   .stats-grid {
