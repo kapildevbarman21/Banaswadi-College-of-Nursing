@@ -1547,7 +1547,6 @@ button, input, select, textarea {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.25rem;
-  perspective: 1200px; /* 3D Perspective Canvas */
   position: relative;
 }
 
@@ -1560,48 +1559,23 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   position: relative;
-  transform-style: preserve-3d;
-  will-change: transform, box-shadow;
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s ease, opacity 0.4s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, opacity 0.4s ease;
   cursor: pointer;
 }
 
-/* Fallback static hover when JS tilt isn't active */
+/* Clean standard card hover (3D motion off) */
 .program-card:hover {
-  box-shadow: 0 24px 50px -12px rgba(7, 26, 54, 0.18), 0 0 0 1px rgba(229, 183, 59, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px -10px rgba(7, 26, 54, 0.15), 0 0 0 1px rgba(229, 183, 59, 0.35);
   border-color: rgba(229, 183, 59, 0.4);
 }
 
-/* Dynamic 3D Tilting active state applied by JS */
-.program-card.is-tilting {
-  transition: none !important; /* Zero lag 60fps tracking during mouse movement */
-  box-shadow: 0 35px 70px -15px rgba(7, 26, 54, 0.22), 0 16px 36px -10px rgba(13, 50, 104, 0.16), 0 0 0 1px rgba(229, 183, 59, 0.45);
-  border-color: rgba(229, 183, 59, 0.55);
-}
-
-/* Smooth release state */
-.program-card.is-releasing {
-  transition: transform 0.75s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.75s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.4s ease !important;
-}
-
-/* Dynamic Specular Glare Overlay */
+/* Specular Glare disabled */
 .program-card-glare {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: 15;
-  opacity: 0;
-  background: radial-gradient(circle 380px at 50% 50%, rgba(255, 255, 255, 0.48) 0%, rgba(229, 183, 59, 0.22) 28%, transparent 68%);
-  mix-blend-mode: overlay;
-  transition: opacity 0.35s ease;
+  display: none !important;
 }
 
-.program-card.is-tilting .program-card-glare {
-  opacity: 1;
-}
-
-/* 3D Depth Layering (Floating layers in 3D perspective) */
+/* Card Badge */
 .program-card-badge {
   position: absolute;
   top: 1rem;
@@ -1617,32 +1591,23 @@ button, input, select, textarea {
   z-index: 10;
   border: 1px solid rgba(229, 183, 59, 0.4);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: translateZ(40px);
-  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.program-card.is-tilting .program-card-badge {
-  transform: translateZ(52px);
 }
 
 .program-img-wrap {
   position: relative;
   height: 220px;
   overflow: hidden;
-  transform: translateZ(16px);
-  transform-style: preserve-3d;
 }
 
 .program-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: transform 0.5s ease;
 }
 
-.program-card:hover .program-img-wrap img,
-.program-card.is-tilting .program-img-wrap img {
-  transform: scale(1.08) translateZ(10px);
+.program-card:hover .program-img-wrap img {
+  transform: scale(1.05);
 }
 
 .program-body {
@@ -1650,8 +1615,6 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   flex: 1;
-  transform: translateZ(24px);
-  transform-style: preserve-3d;
   background: #ffffff;
 }
 
@@ -1660,11 +1623,10 @@ button, input, select, textarea {
   color: var(--primary-navy);
   margin-bottom: 0.85rem;
   font-weight: 700;
-  transform: translateZ(22px);
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.program-card.is-tilting .program-title {
+.program-card:hover .program-title {
   color: #0b3d88;
 }
 
@@ -1677,15 +1639,8 @@ button, input, select, textarea {
   padding: 0.95rem;
   border-radius: var(--radius-sm);
   font-size: 0.8125rem;
-  transform: translateZ(14px);
   border: 1px solid rgba(13, 50, 104, 0.06);
-  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.program-card.is-tilting .program-meta-list {
-  background: #f0f4f9;
-  border-color: rgba(229, 183, 59, 0.25);
-  transform: translateZ(20px);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .meta-row {
@@ -1710,15 +1665,12 @@ button, input, select, textarea {
   line-height: 1.55;
   margin-bottom: 1.5rem;
   flex: 1;
-  transform: translateZ(12px);
 }
 
 .program-card-actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  transform: translateZ(32px);
-  transform-style: preserve-3d;
 }
 
 .btn-card-apply {
@@ -1732,13 +1684,12 @@ button, input, select, textarea {
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
-  transform: translateZ(8px);
 }
 
 .btn-card-apply:hover {
   background: linear-gradient(135deg, var(--med-green-dark) 0%, #046342 100%);
   color: #ffffff;
-  transform: translateZ(16px) scale(1.02);
+  transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(16, 185, 129, 0.4);
 }
 
@@ -1752,14 +1703,13 @@ button, input, select, textarea {
   border-radius: var(--radius-md);
   text-align: center;
   transition: all 0.3s ease;
-  transform: translateZ(6px);
 }
 
 .btn-card-details:hover {
   border-color: var(--accent-gold);
   color: var(--primary-navy);
   background: rgba(229, 183, 59, 0.08);
-  transform: translateZ(12px);
+  transform: translateY(-2px);
 }
 
 /* Fee Highlight in Meta List */
@@ -1803,7 +1753,6 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  transform: translateZ(8px);
 }
 
 .btn-card-fee:hover,
@@ -1831,7 +1780,6 @@ button, input, select, textarea {
   background: #f8fafc;
   border-radius: 10px;
   margin-top: 0;
-  transform: translateZ(10px);
 }
 
 .program-fee-drawer.open {
